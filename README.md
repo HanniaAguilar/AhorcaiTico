@@ -53,10 +53,10 @@ costarriqueñismos, esto con el fin de crear un juego tropicalizado, las cuales
 consisten en palabras o frases que han inventadas por los antepasados, generalmente
 campesinos y que han sido heredades y acuñadas por la población. Algunos
 ejemplos de estas palabras, con su respectivo significado son:
-- Jetón: (adjetivo) Se refiera a alguien muy mentiroso. Ej: “Ese mae es un jetón”
-- Mae: (sustantivo) Referente a una persona, por ejemplo “Ese mae” significa ese chico. Sin embargo es una muletilla que los ticos usan para todo y en cualquier parte de la oración ej: “Mae, qué aburrido”
-- Menudo: (sustantivo) Una pequeña cantidad de dinero, que se adquiere como cambio en una compra mayor. Suele ser un conjunto de monedas. Ej: “Hoy tengo menudo para comprar café”
-- Pichel: (sustantivo) Un recipiente de vidrio o plástico para guardar y servir bebidas frías y “fresco”
+- **Jetón:** (adjetivo) Se refiera a alguien muy mentiroso. Ej: “Ese mae es un jetón”
+- **Mae:** (sustantivo) Referente a una persona, por ejemplo “Ese mae” significa ese chico. Sin embargo es una muletilla que los ticos usan para todo y en cualquier parte de la oración ej: “Mae, qué aburrido”
+- **Menudo:** (sustantivo) Una pequeña cantidad de dinero, que se adquiere como cambio en una compra mayor. Suele ser un conjunto de monedas. Ej: “Hoy tengo menudo para comprar café”
+- **Pichel:** (sustantivo) Un recipiente de vidrio o plástico para guardar y servir bebidas frías y “fresco”
 
 El juego lanzará al azar alguna de las palabras en la lista, el jugador tendrá la oportunidad de adivinar y una vez que adivine o que pierda se mostrará la solución con el respectivo significado de la palabra con el fin de que se conozca más este vocabulario.
 
