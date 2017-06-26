@@ -75,5 +75,7 @@ El juego lanzará al azar alguna de las palabras en la lista, el jugador tendrá
 
 ![Juego](http://i.imgur.com/wyhWg8C.png "Pantalla preliminar jugando")
 
+### [Inkscape][sitio]
+Se utilizara este editor de gráficos vectoriales, permite crear y editar las imagenes, diagramas u otros necesarios para el diseño de la interfaz. El diseño de estos por medio de gráficos vectoriales hace posible ampliar el tamaño de una imagen sin sufrir la pérdida de calidad como sucede en las imagenes convecionales, además permite manipular las imagenes, mover, encojer, estirar de forma sencilla lo que facilita el diseño de las ventanas para el juego que se pretende diseñar. 
 
-
+[sitio]: https://inkscape.org/es/
