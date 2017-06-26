@@ -9,8 +9,9 @@ utilizando gráficos e imágenes. Los gráficos pueden ser botones, ventanas,
 entre otros, que representan las funciones del sistema. Las interfaces gráficas
 pretenden crear un entorno visual sencillo que permita establecer la
 comunicación con el computador o la máquina. Se pretende elaborar un juego
-utilizando interfaz gráfica, el cual consiste básicamente en un ahorcado
-tradicional. El juego se llama Ahorcado Tico.
+utilizando interfaz gráfica, el cual consiste básicamente en un [ahorcado tradicional.][blog] El juego se llama Ahorcado Tico.
+
+[blog]:https://es.wikipedia.org/wiki/Ahorcado_(juego)
  
 ### ¿Cómo jugar Ahorcado Tico?
 El objetivo de este juego es descubrir una
@@ -21,14 +22,15 @@ palabra. Si la palabra contiene la letra escogida, se mostrará en qué posició
 una parte del cuerpo del muñeco del jugador. Cuando estén dibujadas las 8
 partes del cuerpo del muñeco, el jugador se quedará fuera de la partida.
 Existen muchas versiones de este juego, sin embargo nuestro objetivo es hacer
-un juego utilizando qt, que permite a un usuario jugar una partida con la
+un juego utilizando [QT][web], que permite a un usuario jugar una partida con la
 computadora, siendo la computadora la generadora de palabras, por cada palabra
 el jugador tendrá 8 intentos para adivinar la palabra, si lo logra el jugador
 acumulara 10 pts, por el contrario, se le mostrará la palabra correcta y este
 no acumulara puntos. Además cada partida consta de 5 palabras, el juego termina
 hasta que el jugador presione, el botón de rendirse o hasta que terminen las 5
 palabras.
-Para obtener más información sobre el juego tradicional de ahorcado se puede consultar en………………………..LINK………………………
+
+[web]: https://www.qt.io/es/
  
 ### Plus del juego
 Se pretende agregar un “plus” a este juego,
