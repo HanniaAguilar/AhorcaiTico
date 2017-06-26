@@ -46,5 +46,32 @@ pretende crear lanzará la misma palabra a ambos jugadores y se podrá controlar
 ambas partidas de manera que alguno gana o pierde el otro jugador podrá darse
 cuenta de eso.
  
+### Tropicalización del juego
+El programa que controla el juego recibirá una
+lista de palabras predeterminada, esta lista contiene palabras que son
+costarriqueñismos, esto con el fin de crear un juego tropicalizado, las cuales
+consisten en palabras o frases que han inventadas por los antepasados, generalmente
+campesinos y que han sido heredades y acuñadas por la población. Algunos
+ejemplos de estas palabras, con su respectivo significado son:
+- Jetón: (adjetivo) Se refiera a alguien muy mentiroso. Ej: “Ese mae es un jetón”
+- Mae: (sustantivo) Referente a una persona, por ejemplo “Ese mae” significa ese chico. Sin embargo es una muletilla que los ticos usan para todo y en cualquier parte de la oración ej: “Mae, qué aburrido”
+- Menudo: (sustantivo) Una pequeña cantidad de dinero, que se adquiere como cambio en una compra mayor. Suele ser un conjunto de monedas. Ej: “Hoy tengo menudo para comprar café”
+- Pichel: (sustantivo) Un recipiente de vidrio o plástico para guardar y servir bebidas frías y “fresco”
+
+El juego lanzará al azar alguna de las palabras en la lista, el jugador tendrá la oportunidad de adivinar y una vez que adivine o que pierda se mostrará la solución con el respectivo significado de la palabra con el fin de que se conozca más este vocabulario.
+
+
+### Descripción preliminar de la interfaz.
+ 
+- **Inicio:** La pantalla inicial mostrará el nombre del juego (Ahorcado Tico), las opciones de juego (Multijugador o un solo jugador), un botón de salida y ayuda (explica cómo jugar el juego).  
+
+
+
+
+- **Información:** Aparece una pantalla en la que se solicita el nombre del jugador y también continúan apareciendo la opción de regresar y ayuda.
+
+
+- **Pantalla de juego:** Es donde se desarrollará el juego, en está aparece el dibujo respectivo de donde se armara el muñeco de ahorcado, el nombre del jugador o los nombres de ambos si es un multijugador, el puntaje, las líneas que indican el número de letras de la palabra a adivinar y un teclado. Cuando inicia el juego aparecerá una ventaja que marca el inicio, una vez que se comienza a jugar cada vez que el usuario elija una letra, esta se revisará y en caso de que sea correcta se elimina la línea y la coloca la letra en caso contrario una ventana indicará el error, en ambos casos la letra desaparece de las opciones del teclado. El puntaje aumentara según los aciertos y el muñeco se irá armando según los desaciertos, cuando solo quede un intento aparecerá una ventana que indique esto al usuario. Al final se mostrará la solución, el significado de la palabra, el puntaje obtenido y el estado (ganó o perdió). 
+
 
 
