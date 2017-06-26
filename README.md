@@ -65,13 +65,15 @@ El juego lanzará al azar alguna de las palabras en la lista, el jugador tendrá
  
 - **Inicio:** La pantalla inicial mostrará el nombre del juego (Ahorcado Tico), las opciones de juego (Multijugador o un solo jugador), un botón de salida y ayuda (explica cómo jugar el juego).  
 
-
-
+![Inicio](http://i.imgur.com/0iHz2tS.png "Pantalla preliminar inicio")
 
 - **Información:** Aparece una pantalla en la que se solicita el nombre del jugador y también continúan apareciendo la opción de regresar y ayuda.
 
+![Informacion](http://i.imgur.com/mHHGJtl.png "Pantalla preliminar informacion")
 
-- **Pantalla de juego:** Es donde se desarrollará el juego, en está aparece el dibujo respectivo de donde se armara el muñeco de ahorcado, el nombre del jugador o los nombres de ambos si es un multijugador, el puntaje, las líneas que indican el número de letras de la palabra a adivinar y un teclado. Cuando inicia el juego aparecerá una ventaja que marca el inicio, una vez que se comienza a jugar cada vez que el usuario elija una letra, esta se revisará y en caso de que sea correcta se elimina la línea y la coloca la letra en caso contrario una ventana indicará el error, en ambos casos la letra desaparece de las opciones del teclado. El puntaje aumentara según los aciertos y el muñeco se irá armando según los desaciertos, cuando solo quede un intento aparecerá una ventana que indique esto al usuario. Al final se mostrará la solución, el significado de la palabra, el puntaje obtenido y el estado (ganó o perdió). 
+- **Pantalla de juego:** Es donde se desarrollará el juego, en está aparece el dibujo respectivo de donde se armara el muñeco de ahorcado, el nombre del jugador o los nombres de ambos si es un multijugador, el puntaje, las líneas que indican el número de letras de la palabra a adivinar y un teclado. Cuando inicia el juego aparecerá una ventaja que marca el inicio, una vez que se comienza a jugar cada vez que el usuario elija una letra, esta se revisará y en caso de que sea correcta se elimina la línea y la coloca la letra en caso contrario una ventana indicará el error, en ambos casos la letra desaparece de las opciones del teclado. El puntaje aumentara según los aciertos y el muñeco se irá armando según los desaciertos, cuando solo quede un intento aparecerá una ventana que indique esto al usuario. Al final se mostrará la solución, el significado de la palabra, el puntaje obtenido y el estado (ganó o perdió). ![juego]
+
+![Juego](http://i.imgur.com/wyhWg8C.png "Pantalla preliminar jugando")
 
 
 
