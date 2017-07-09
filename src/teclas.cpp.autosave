@@ -1,6 +1,0 @@
-#include "Teclas.h"
-
-Teclas::Teclas()
-{
-
-}

@@ -1,6 +1,7 @@
 *.zip
 *.exe
 *.o
+*.autosave
 bin/
 build/
 docs/html/
