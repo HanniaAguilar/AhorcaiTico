@@ -1,0 +1,13 @@
+*.zip
+*.exe
+*.o
+bin/
+build/
+docs/html/
+docs/latex/
+solution
+solution1
+solution2
+given
+given1
+

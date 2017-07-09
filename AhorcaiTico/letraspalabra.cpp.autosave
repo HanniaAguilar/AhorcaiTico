@@ -1,0 +1,6 @@
+#include "LetrasPalabra.h"
+
+LetrasPalabra::LetrasPalabra()
+{
+
+}

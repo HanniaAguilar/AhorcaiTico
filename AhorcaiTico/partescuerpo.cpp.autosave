@@ -1,0 +1,6 @@
+#include "PartesCuerpo.h"
+
+PartesCuerpo::PartesCuerpo()
+{
+
+}
