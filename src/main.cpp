@@ -1,7 +1,7 @@
-#include "mainwindow.h"
+#include "Controlador.h"
 
 int main(int argc, char *argv[])
 {
-    MainWindow ahorcaiTico(argc, argv);
-    return ahorcaiTico.run();
+    Controlador ahorcaiTico(argc, argv);
+    return ahorcaiTico.correr();
 }

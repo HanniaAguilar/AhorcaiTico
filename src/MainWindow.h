@@ -1,30 +1,26 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QApplication>
-
-class QMainWindow;
-class QGraphicsScene;
-class QGraphicsView;
-class QStyleFactory;
-class QSvgRenderer;
-class QPushButton;
-class QPalette;
+#include "mainwindow.h"
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <QSvgRenderer>
+#include "objetoprop.h"
 
 
-class MainWindow : public QApplication
+class Controlador;
+
+class MainWindow:public QGraphicsView
 {
-  protected:
-    QGraphicsScene* escena;
-    QGraphicsView* vista;
 
-  public:
-    MainWindow(int &argc, char **argv, int flags = ApplicationFlags);
-    ~MainWindow();
-    int run();
+    protected:
+      ObjetoProp* m_componente;
+      QSvgRenderer* m_svgRenderer;
 
-  protected slots:
-
+    public:
+        MainWindow(QGraphicsScene* escena);
+        ~MainWindow();
+        void insertarComponentes(QGraphicsScene* escena);
 };
 
 #endif // MAINWINDOW_H

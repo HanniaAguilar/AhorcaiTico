@@ -1,42 +1,38 @@
-/*#include "mainwindow.h"
-#include "ui_mainwindow.h"
-
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
-{
-    ui->setupUi(this);
-}
-
-MainWindow::~MainWindow()
-{
-    delete ui;
-}*/
 
 #include "mainwindow.h"
 
-#include <QGraphicsView>
-#include <QGraphicsScene>
-#include <QTime>
-#include <QTimer>
+class ObjectoProp;
 
-MainWindow::MainWindow(int &argc, char **argv, int flags)
-    : QApplication (argc, argv, flags)
-    , escena(nullptr)
-    , vista(nullptr)
+MainWindow::MainWindow(QGraphicsScene *escena)
+    :QGraphicsView(escena)
+    ,m_componente(Q_NULLPTR)
+    ,m_svgRenderer(Q_NULLPTR)
 {
+}
+
+void MainWindow::insertarComponentes(QGraphicsScene* m_escena)
+{
+
+    this->setBackgroundBrush(QBrush(Qt::white, Qt::SolidPattern));
+    this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    m_svgRenderer = new QSvgRenderer(QString(":/Resources/assets.svg"), this);
+
+    m_componente = new ObjetoProp("horca");
+    m_componente->setElementId("horca");
+    m_componente->setSharedRenderer(m_svgRenderer);
+    m_escena->addItem(m_componente);
+
+    /*m_componente = new ObjetoProp("cabeza");
+    m_componente->setElementId("cabeza");
+    m_componente->setSharedRenderer(m_svgRenderer);
+    m_escena->addItem(m_componente);*/
 }
 
 MainWindow::~MainWindow()
 {
-    delete escena;
-    delete vista;
+    delete  m_componente;
+    delete  m_svgRenderer;
 }
 
-int MainWindow::run()
-{
-    escena = new QGraphicsScene();
-    vista = new QGraphicsView(escena);
-    vista->show();
-   return exec();
-}
