@@ -1,21 +1,19 @@
 #include "mecanicajuego.h"
 
-
-
 MecanicaJuego::MecanicaJuego()
 {
 
 }
 bool MecanicaJuego::cargarPalabras()
 {
-    v_palabras.push_back("casa");
+    /*v_palabras.push_back("casa");
     v_palabras.push_back("carro");
     v_palabras.push_back("sapo");
     v_palabras.push_back("cabina");
     v_palabras.push_back("juego");
     v_palabras.push_back("patinar");
     v_palabras.push_back("hablar");
-    v_palabras.push_back("mariposa");
+    v_palabras.push_back("mariposa");*/
 }
 
 bool MecanicaJuego::seleccionarPalabrasAzar()
@@ -28,12 +26,15 @@ bool MecanicaJuego::seleccionarPalabrasAzar()
 
 bool MecanicaJuego::buscarCaracter(char caracter)
 {
+    bool caracterEncontrado=false;
     for(int index=0;index<m_palabra.length();++index){
         if(caracter==m_palabra[index]){
             std::cout<<"mostrar caracter:"<<index<<std::endl;//llamar metodo que muestra los caracteres deseados
+            caracterEncontrado=true;
         }
 
     }
+    return caracterEncontrado;
 }
 
 void MecanicaJuego::lanzarPalabra() const
