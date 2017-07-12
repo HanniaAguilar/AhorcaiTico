@@ -15,7 +15,7 @@
 
 
 class QGraphicsScene;
-class ReCallMainView;
+
 
 class Controlador : public QApplication
 {
