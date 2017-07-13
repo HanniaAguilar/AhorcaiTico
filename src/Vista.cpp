@@ -30,6 +30,9 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena)
     teclas->agregarTeclado();
     teclas->mostrarTeclado(m_svgRenderer,m_escena);
 
+    cuerpo = new PartesCuerpo();
+    cuerpo->mostrarPartes(m_svgRenderer, m_escena);
+
 }
 
 void Vista::dibujeFondo (QGraphicsScene* m_escena){
