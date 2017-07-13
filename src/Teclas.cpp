@@ -46,7 +46,7 @@ void Teclas::mostrarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
     QString alfabeto="QWERTYUIOPASDFGHJKLNZXCVBNM";
 
     /// manejar posiciones
-    int ejeX=90,ejeY=50;
+    int ejeX=360,ejeY=300;
 
     /// ciclo que recorre el vector con los ID de cada objeto
     /// Y crea un ObjetoProp a partir de ellos.

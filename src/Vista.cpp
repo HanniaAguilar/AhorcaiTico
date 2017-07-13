@@ -18,6 +18,8 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena)
     this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     m_svgRenderer = new QSvgRenderer(QString(":/Resources/assets.svg"), this);
+    cuerpo = new PartesCuerpo();
+    cuerpo->mostrarPartes(m_svgRenderer, m_escena);
 
     /*m_componente = new ObjetoProp("horca");
     m_componente->setElementId("horca");

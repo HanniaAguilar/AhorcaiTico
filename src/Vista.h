@@ -8,6 +8,7 @@
 #include "objetoprop.h"
 #include "Teclas.h"
 #include "marcador.h"
+#include "PartesCuerpo.h"
 
 
 class Controlador;
@@ -21,6 +22,7 @@ class Vista:public QGraphicsView
       ObjetoProp* m_fondo;
       Teclas* teclas;
       Marcador* m_marcador;
+      PartesCuerpo* cuerpo;
 
     public:
         Vista(QGraphicsScene* escena);
