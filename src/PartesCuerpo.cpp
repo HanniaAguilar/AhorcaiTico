@@ -1,4 +1,4 @@
-#include "partescuerpo.h"
+#include "PartesCuerpo.h"
 #include "objetoprop.h"
 
 PartesCuerpo::PartesCuerpo()

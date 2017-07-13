@@ -1,4 +1,4 @@
-#include "teclas.h"
+#include "Teclas.h"
 
 
 Teclas::Teclas()
@@ -68,6 +68,7 @@ void Teclas::mostrarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
         temporal->setElementId(v_teclado[indice]);
         temporal->setSharedRenderer(svgRenderer);
         temporal->setZValue(1);
+        temporal->setScale(5);
         temporal->setPos(ejeX,ejeY);
         escena->addItem(temporal);
         v_objetosProp.append(temporal);
