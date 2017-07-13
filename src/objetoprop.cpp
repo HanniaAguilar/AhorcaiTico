@@ -14,11 +14,11 @@ ObjetoProp::~ObjetoProp()
 #include <iostream>
 void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
 {
-    if(this->elementId()=="letraQ")
+    /*if(this->elementId()=="letraQ")
     {
        std::cout<<"TOUCHED("<<this->elementId().toStdString()<<")"<<std::endl;
     }
-    /*if(this->elementId()=="letraw")
+    if(this->elementId()=="letraw")
     {
        std::cout<<"TOUCHED("<<this->elementId().toStdString()<<")"<<std::endl;
     }

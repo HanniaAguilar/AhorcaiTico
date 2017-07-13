@@ -63,7 +63,6 @@ void Teclas::mostrarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
             }
 
             /// asignando propiedades a las teclas
-            ///
             temporal= new ObjetoProp(v_teclado[indice]);
             temporal->setSharedRenderer(svgRenderer);
             temporal->setZValue(1);
