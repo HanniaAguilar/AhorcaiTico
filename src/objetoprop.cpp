@@ -124,7 +124,11 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
     }*/
     //std::cout<<this->getChar()<<std::endl;
     //this->setPos(-100,-100);
-    this->setOpacity(0.0);
+    std::cout<<"TOUCHED("<<this->elementId().toStdString()<<")"<<std::endl;
+    if(this->elementId()!="fondo"&&this->elementId()!="cabeza"&&this->elementId()!="torso"
+            &&this->elementId()!="brazoDer"&&this->elementId()!="BrazoIzq"&&this->elementId()!="pieIzq"
+            &&this->elementId()!="pieDer")
+        this->setOpacity(0.0);
 }
 
 void ObjetoProp::setChar(QChar caracter)

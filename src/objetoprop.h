@@ -20,6 +20,9 @@ class ObjetoProp: public QGraphicsSvgItem
         void esconderObjeto(ObjetoProp* objeto);
         void setChar(QChar caracter);
         QChar getChar();
+
+        ///signals slots
+        ///
 };
 
 #endif // OBJETOPROP_H
