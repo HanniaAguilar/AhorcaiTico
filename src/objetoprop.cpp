@@ -1,7 +1,7 @@
 #include "ObjetoProp.h"
 
 ObjetoProp::ObjetoProp(QString nombre)
-    :nombre(nombre)
+    :m_nombre(nombre)
 {
 }
 
@@ -11,10 +11,9 @@ ObjetoProp::~ObjetoProp()
 }
 
 #include <iostream>
-/// Metodo para verificar si la letra que selecciono el usuaria es la correcta
 void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
 {
-    if(this->elementId()=="letraQ")
+    /*if(this->elementId()=="letraQ")
     {
        std::cout<<"TOUCHED("<<this->elementId().toStdString()<<")"<<std::endl;
     }
@@ -121,6 +120,17 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
     if(this->elementId()=="letraM")
     {
        std::cout<<"TOUCHED("<<this->elementId().toStdString()<<")"<<std::endl;
-    }
+    }*/
+    std::cout<<this->getChar()<<std::endl;
+    this->setPos(-10,-10);
 }
 
+void ObjetoProp::setChar(char caracter)
+{
+    m_caracter=caracter;
+}
+
+char ObjetoProp::getChar() const
+{
+    return m_caracter;
+}

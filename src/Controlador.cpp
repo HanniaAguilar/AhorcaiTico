@@ -1,9 +1,13 @@
 #include "Controlador.h"
 
+
+
+
 Controlador::Controlador(int &argc, char **argv, int flags)
     : QApplication(argc, argv, flags)
     , m_escena(nullptr)
     , m_vista(nullptr)
+    , marcador(nullptr)
 {
 }
 
@@ -12,6 +16,8 @@ Controlador::Controlador(int &argc, char **argv, int flags)
 int Controlador::correr()
 {
     //Cargar palabras
+    mecanicaJuego= new MecanicaJuego();
+    mecanicaJuego->cargarPalabras();
 
     //Elegir palabras al azar
 
@@ -19,14 +25,17 @@ int Controlador::correr()
 
     m_escena = new QGraphicsScene();
     m_vista = new Vista(m_escena);
-    #if ! defined(Q_OS_ANDROID) && ! defined(Q_OS_IOS)
-          m_vista->resize(800, 600);
-    #endif
-    m_escena->setSceneRect(m_vista->rect());
     m_vista->insertarComponentes(m_escena);
     m_vista->show();
 
-    //Crear un ciclo para jugar (Quiza se deba crear otro separado de este metodo)
+    /// Se agrega el teclado
+    m_svgRenderer = new QSvgRenderer(QString(":/Resources/assets.svg"), this);
+    teclas = new Teclas();
+    teclas->agregarTeclado();
+    teclas->mostrarTeclado(m_svgRenderer,m_escena);
+
+    mecanicaJuego->seleccionarPalabrasAzar();
+    mecanicaJuego->lanzarPalabra();
     return exec();
 }
 

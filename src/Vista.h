@@ -1,12 +1,13 @@
 #ifndef VISTA_H
 #define VISTA_H
 
-#include "vista.h"
+#include "Vista.h"
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QSvgRenderer>
 #include "objetoprop.h"
 #include "teclas.h"
+#include "marcador.h"
 
 
 class Controlador;
@@ -19,6 +20,7 @@ class Vista:public QGraphicsView
       QSvgRenderer* m_svgRenderer;
       ObjetoProp* m_fondo;
       Teclas* teclas;
+      Marcador* m_marcador;
 
     public:
         Vista(QGraphicsScene* escena);

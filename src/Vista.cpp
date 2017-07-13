@@ -1,4 +1,3 @@
-
 #include "vista.h"
 
 class ObjectoProp;
@@ -46,5 +45,4 @@ Vista::~Vista()
 {
     delete  m_componente;
     delete  m_svgRenderer;
-    delete  m_fondo;
 }

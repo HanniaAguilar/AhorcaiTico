@@ -1,4 +1,5 @@
 #include "mecanicajuego.h"
+
 #include <string>
 #include <fstream>
 #include <iostream>

@@ -7,15 +7,17 @@
 class PartesCuerpo
 {
     protected:
-     //QVector<QString> v_partes;
+     QVector<QString> v_partes;
 
     public:
-     //QVector<ObjetoProp*> v_objetosProp;
+     QVector<ObjetoProp*> v_objetosPartes;
 
     public:
      PartesCuerpo();
-     //void agregarPartes();
+     void agregarPartes();
      void mostrarPartes(QSvgRenderer* svgRenderer, QGraphicsScene *escena);
+     void cargarPartes(QSvgRenderer *svgRenderer, QGraphicsScene *escena);
+     void fijarPosiciones();
 };
 
 #endif // PARTESCUERPO_H
