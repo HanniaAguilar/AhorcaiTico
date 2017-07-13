@@ -38,6 +38,7 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena)
 void Vista::dibujeFondo (QGraphicsScene* m_escena){
      m_fondo = new ObjetoProp("fondo");
      m_fondo->setSharedRenderer(m_svgRenderer);
+     m_fondo->setPos(45,62);
      m_escena->addItem(m_fondo);
      //this->fitInView(m_fondo,Qt::KeepAspectRatioByExpanding);
      m_fondo->setZValue(-1);

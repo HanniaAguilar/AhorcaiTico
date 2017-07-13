@@ -27,15 +27,15 @@ void PartesCuerpo::mostrarPartes(QSvgRenderer *svgRenderer, QGraphicsScene *esce
         temporal->setElementId("cabeza");
         temporal->setSharedRenderer(svgRenderer);
         temporal->setZValue(1);
-        temporal->setScale(3);
-        temporal->setPos(200,122);
+       // temporal->setScale(3);
+        temporal->setPos(200,105);
         escena->addItem(temporal);
 
         temporal= new ObjetoProp("torso");
         temporal->setElementId("torso");
         temporal->setSharedRenderer(svgRenderer);
         temporal->setZValue(1);
-        temporal->setScale(3);
+        //temporal->setScale(3);
         temporal->setPos(230,180);
         escena->addItem(temporal);
 
@@ -43,7 +43,7 @@ void PartesCuerpo::mostrarPartes(QSvgRenderer *svgRenderer, QGraphicsScene *esce
         temporal->setElementId("brazoDer");
         temporal->setSharedRenderer(svgRenderer);
         temporal->setZValue(1);
-        temporal->setScale(3);
+        //temporal->setScale(3);
         temporal->setPos(208,195);
         escena->addItem(temporal);
 
@@ -51,7 +51,7 @@ void PartesCuerpo::mostrarPartes(QSvgRenderer *svgRenderer, QGraphicsScene *esce
         temporal->setElementId("BrazoIzq");
         temporal->setSharedRenderer(svgRenderer);
         temporal->setZValue(1);
-        temporal->setScale(3);
+        //temporal->setScale(3);
         temporal->setPos(273,180);
         escena->addItem(temporal);
 
@@ -59,7 +59,7 @@ void PartesCuerpo::mostrarPartes(QSvgRenderer *svgRenderer, QGraphicsScene *esce
         temporal->setElementId("pieDer");
         temporal->setSharedRenderer(svgRenderer);
         temporal->setZValue(1);
-        temporal->setScale(3);
+        //temporal->setScale(3);
         temporal->setPos(233,236);
         escena->addItem(temporal);
 
@@ -67,7 +67,7 @@ void PartesCuerpo::mostrarPartes(QSvgRenderer *svgRenderer, QGraphicsScene *esce
         temporal->setElementId("pieIzq");
         temporal->setSharedRenderer(svgRenderer);
         temporal->setZValue(1);
-        temporal->setScale(3);
+        //temporal->setScale(3);
         temporal->setPos(256,235);
         escena->addItem(temporal);
 }

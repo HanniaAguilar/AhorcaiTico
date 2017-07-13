@@ -123,7 +123,8 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
        std::cout<<"TOUCHED("<<this->elementId().toStdString()<<")"<<std::endl;
     }*/
     //std::cout<<this->getChar()<<std::endl;
-    this->setPos(-10,-10);
+    //this->setPos(-100,-100);
+    this->setOpacity(0.0);
 }
 
 void ObjetoProp::setChar(QChar caracter)
