@@ -10,19 +10,21 @@ MecanicaJuego::MecanicaJuego()
 bool MecanicaJuego::cargarPalabras()
 {
     std::string palabra;
-    std::ifstream diccionario (":/Resources/Diccionario.txt");
-     if (!diccionario.is_open()){         
-         return false;
-     }
-     else
-     {
+    std::ifstream diccionario ("C:\\Users\\Hannia\\Desktop\\Diccionario.txt");
+     if (diccionario.is_open()){
        while ( getline (diccionario,palabra) )
        {
-            v_palabras.push_back(palabra);
+           v_palabras.push_back(palabra);
        }
        diccionario.close();
-       return true;
      }
+     else
+         return false;
+     /*for(unsigned int i=0;i<v_palabras.size();i++)
+         {
+             std::cout<<v_palabras[i]<<std::endl;
+         }*/
+     return true;
 }
 
 bool MecanicaJuego::seleccionarPalabrasAzar()
