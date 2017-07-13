@@ -52,14 +52,15 @@ void Teclas::mostrarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
     /// Y crea un ObjetoProp a partir de ellos.
     for(int indice=0;indice < v_teclado.size();++indice){
         /// controlar las posiciones de las teclas
-        if(ejeX<=190){
-            ejeX+=10;
+        if(ejeX<=800){
+            ejeX+=45;
         }else{
-            ejeX=90;
-            ejeY+=10;
+           if(ejeX==810)
+                ejeX=405+1;
+           else
+                ejeX=405+65;
+            ejeY+=50;
         }
-        if(ejeY==70&&ejeY==90)
-            ejeY=100;
 
         /// asignando propiedades a las teclas
         ///
