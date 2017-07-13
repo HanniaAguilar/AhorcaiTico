@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>Resources/assets.svg</file>
         <file>Resources/Diccionario.txt</file>
-        <file>Resources/Fondo.svg</file>
+        <file>Resources/drawing.svg</file>
     </qresource>
 </RCC>

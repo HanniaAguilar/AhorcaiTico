@@ -35,10 +35,6 @@ class Controlador : public QApplication
     QSvgRenderer* svgRenderer = nullptr;
     /// mecanica del juego
     MecanicaJuego* mecanicaJuego;
-    /// teclado
-    Teclas* teclas;
-    QSvgRenderer* m_svgRenderer;
-
 
    public:
     ///controlador

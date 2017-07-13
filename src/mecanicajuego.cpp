@@ -29,12 +29,6 @@ bool MecanicaJuego::cargarPalabras()
      return true;
 }
 
-
-
-
-
-
-
 bool MecanicaJuego::seleccionarPalabrasAzar()
 {
     /*size_t indiceAzar = rand() % v_palabras.size();

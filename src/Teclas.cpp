@@ -27,7 +27,7 @@ void Teclas::agregarTeclado()
     v_teclado.append("letraJ");
     v_teclado.append("letraK");
     v_teclado.append("letraL");
-    v_teclado.append("letraenye");
+    v_teclado.append("letraEnye");
     v_teclado.append("letraZ");
     v_teclado.append("letraX");
     v_teclado.append("letraC");
@@ -46,7 +46,7 @@ void Teclas::mostrarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
     QString alfabeto="QWERTYUIOPASDFGHJKLNZXCVBNM";
 
     /// manejar posiciones
-    int ejeX=90,ejeY=50;
+    int ejeX=360,ejeY=300;
 
     /// ciclo que recorre el vector con los ID de cada objeto
     /// Y crea un ObjetoProp a partir de ellos.
@@ -65,17 +65,12 @@ void Teclas::mostrarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
             /// asignando propiedades a las teclas
             ///
             temporal= new ObjetoProp(v_teclado[indice]);
-            temporal->setElementId(v_teclado[indice]);
             temporal->setSharedRenderer(svgRenderer);
             temporal->setZValue(1);
-            temporal->setScale(5);
-            temporal->setPos(ejeX,ejeY);
+            //temporal->setScale(5);
             escena->addItem(temporal);
+            temporal->setPos(ejeX,ejeY);
             v_objetosProp.append(temporal);
             std::cout<<indice<<": Element loaded("<<v_teclado[indice].toStdString()<<")"<<std::endl;
         }
-
-
-
-
 }

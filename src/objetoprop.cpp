@@ -3,6 +3,7 @@
 ObjetoProp::ObjetoProp(QString nombre)
     :m_nombre(nombre)
 {
+    setElementId(nombre);
 }
 
 

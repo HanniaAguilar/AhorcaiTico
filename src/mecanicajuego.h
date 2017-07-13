@@ -7,6 +7,8 @@
 #include <QVector>
 #include <QString>
 
+
+// TODO: renombrar a Diccionario
 class MecanicaJuego
 {
     private:
