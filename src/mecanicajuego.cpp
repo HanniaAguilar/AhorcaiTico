@@ -37,8 +37,8 @@ bool MecanicaJuego::cargarPalabras()
 
 bool MecanicaJuego::seleccionarPalabrasAzar()
 {
-    size_t indiceAzar = rand() % v_palabras.size();
-    m_palabra = v_palabras[indiceAzar];//definir string palabra en el .h
+    /*size_t indiceAzar = rand() % v_palabras.size();
+    m_palabra = v_palabras[indiceAzar];//definir string palabra en el .h*/
     //aqui llamar metodo para dibujar las rayas
     return true;
 }

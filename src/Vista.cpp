@@ -1,4 +1,4 @@
-#include "vista.h"
+#include "Vista.h"
 
 class ObjectoProp;
 

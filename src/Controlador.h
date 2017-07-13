@@ -4,7 +4,7 @@
 #include <QApplication>
 #include "Vista.h"
 #include "mecanicajuego.h"
-#include "teclas.h"
+#include "Teclas.h"
 #include <QSvgRenderer>
 #include <QtMath>
 #include <QApplication>
@@ -13,7 +13,7 @@
 #include <QSequentialAnimationGroup>
 #include <QPoint>
 #include <QVector>
-#include <Random>
+//#include <Random>
 
 class QGraphicsScene;
 class QSvgRenderer;

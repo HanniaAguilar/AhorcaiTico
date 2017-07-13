@@ -1,4 +1,4 @@
-#include "ObjetoProp.h"
+#include "objetoprop.h"
 
 ObjetoProp::ObjetoProp(QString nombre)
     :m_nombre(nombre)

@@ -1,5 +1,3 @@
-#include <iostream>
-#include "MecanicaJuego.h"
 #include "Controlador.h"
 
 int main(int argc, char *argv[])

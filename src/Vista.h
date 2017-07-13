@@ -6,7 +6,7 @@
 #include <QGraphicsScene>
 #include <QSvgRenderer>
 #include "objetoprop.h"
-#include "teclas.h"
+#include "Teclas.h"
 #include "marcador.h"
 
 

@@ -7,20 +7,20 @@ CONFIG += c++11
 HEADERS += \
     mecanicajuego.h \
     marcador.h \
-    controlador.h \
-    teclas.h \
+    Controlador.h \
+    Teclas.h \
     objetoprop.h \
     Vista.h \
-    partescuerpo.h
+    PartesCuerpo.h
 
 SOURCES += main.cpp \
     mecanicajuego.cpp \
     marcador.cpp \
-    controlador.cpp \
-    teclas.cpp \
+    Controlador.cpp \
+    Teclas.cpp \
     objetoprop.cpp \
     Vista.cpp \
-    partescuerpo.cpp
+    PartesCuerpo.cpp
 
 mac {
         Resources.files = Resources
