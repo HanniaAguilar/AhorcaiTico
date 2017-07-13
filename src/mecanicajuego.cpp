@@ -1,4 +1,7 @@
 #include "mecanicajuego.h"
+#include <string>
+#include <fstream>
+#include <iostream>
 
 MecanicaJuego::MecanicaJuego()
 {
@@ -6,14 +9,20 @@ MecanicaJuego::MecanicaJuego()
 }
 bool MecanicaJuego::cargarPalabras()
 {
-    /*v_palabras.push_back("casa");
-    v_palabras.push_back("carro");
-    v_palabras.push_back("sapo");
-    v_palabras.push_back("cabina");
-    v_palabras.push_back("juego");
-    v_palabras.push_back("patinar");
-    v_palabras.push_back("hablar");
-    v_palabras.push_back("mariposa");*/
+    std::string palabra;
+    std::ifstream diccionario (":/Resources/Diccionario.txt");
+     if (!diccionario.is_open()){         
+         return false;
+     }
+     else
+     {
+       while ( getline (diccionario,palabra) )
+       {
+            v_palabras.push_back(palabra);
+       }
+       diccionario.close();
+       return true;
+     }
 }
 
 bool MecanicaJuego::seleccionarPalabrasAzar()
