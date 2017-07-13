@@ -1,8 +1,11 @@
 #include "mecanicajuego.h"
 
-#include <string>
+#include <QString>
+#include <QFile>
 #include <fstream>
 #include <iostream>
+#include <QMessageBox>
+#include <QTextStream>
 
 MecanicaJuego::MecanicaJuego()
 {
@@ -10,23 +13,27 @@ MecanicaJuego::MecanicaJuego()
 }
 bool MecanicaJuego::cargarPalabras()
 {
-    std::string palabra;
-    std::ifstream diccionario ("C:\\Users\\Hannia\\Desktop\\Diccionario.txt");
-     if (diccionario.is_open()){
-       while ( getline (diccionario,palabra) )
-       {
-           v_palabras.push_back(palabra);
-       }
-       diccionario.close();
-     }
-     else
-         return false;
-     /*for(unsigned int i=0;i<v_palabras.size();i++)
-         {
-             std::cout<<v_palabras[i]<<std::endl;
-         }*/
+    QFile diccionario (":/Resources/Diccionario.txt");
+    if(!diccionario.open(QIODevice::ReadOnly)) {
+        QMessageBox::information(0, "error", diccionario.errorString());
+    }
+    QTextStream in(&diccionario);
+
+    while(!in.atEnd()) {
+        QString linea = in.readLine();
+        v_palabras.append(linea);
+    }
+
+    diccionario.close();
+
      return true;
 }
+
+
+
+
+
+
 
 bool MecanicaJuego::seleccionarPalabrasAzar()
 {
@@ -36,7 +43,7 @@ bool MecanicaJuego::seleccionarPalabrasAzar()
     return true;
 }
 
-bool MecanicaJuego::buscarCaracter(char caracter)
+bool MecanicaJuego::buscarCaracter(QChar caracter)
 {
     bool caracterEncontrado=false;
     for(int index=0;index<m_palabra.length();++index){
@@ -49,7 +56,7 @@ bool MecanicaJuego::buscarCaracter(char caracter)
     return caracterEncontrado;
 }
 
-void MecanicaJuego::lanzarPalabra() const
+QString MecanicaJuego::lanzarPalabra() const
 {
-    std::cout<<m_palabra<<std::endl;
+    return m_palabra;
 }

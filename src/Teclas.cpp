@@ -43,7 +43,7 @@ void Teclas::mostrarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
 {
     /// objeto temporal para cargar las teclas
     ObjetoProp* temporal;
-
+    QString alfabeto="QWERTYUIOPASDFGHJKLNZXCVBNM";
 
     /// manejar posiciones
     int ejeX=90,ejeY=50;
@@ -51,27 +51,30 @@ void Teclas::mostrarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
     /// ciclo que recorre el vector con los ID de cada objeto
     /// Y crea un ObjetoProp a partir de ellos.
     for(int indice=0;indice < v_teclado.size();++indice){
-        /// controlar las posiciones de las teclas
-        if(ejeX<=800){
-            ejeX+=45;
-        }else{
-           if(ejeX==810)
-                ejeX=405+1;
-           else
-                ejeX=405+65;
-            ejeY+=50;
+            /// controlar las posiciones de las teclas
+            if(ejeX<=800){
+                ejeX+=45;
+            }else{
+               if(ejeX==810)
+                    ejeX=405+1;
+               else
+                    ejeX=405+65;
+                ejeY+=50;
+            }
+
+            /// asignando propiedades a las teclas
+            ///
+            temporal= new ObjetoProp(v_teclado[indice]);
+            temporal->setElementId(v_teclado[indice]);
+            temporal->setSharedRenderer(svgRenderer);
+            temporal->setZValue(1);
+            temporal->setPos(ejeX,ejeY);
+            temporal->setChar(alfabeto[indice]);
+            //temporal->setScale(4);
+            escena->addItem(temporal);
+            v_objetosProp.append(temporal);
+            std::cout<<indice<<": Element loaded("<<v_teclado[indice].toStdString()<<")"<<std::endl;
         }
 
-        /// asignando propiedades a las teclas
-        ///
-        temporal= new ObjetoProp(v_teclado[indice]);
-        temporal->setElementId(v_teclado[indice]);
-        temporal->setSharedRenderer(svgRenderer);
-        temporal->setZValue(1);
-        temporal->setPos(ejeX,ejeY);
-        escena->addItem(temporal);
-        v_objetosProp.append(temporal);
-        std::cout<<indice<<": Element loaded("<<v_teclado[indice].toStdString()<<")"<<std::endl;
-    }
 
 }

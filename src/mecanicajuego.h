@@ -4,20 +4,21 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
+#include <QVector>
+#include <QString>
 
 class MecanicaJuego
 {
     private:
-    std::string m_palabra;
-    std::vector<std::string> v_palabras;
+    QString m_palabra;
+    QVector<QString> v_palabras;
     public:
 
     MecanicaJuego();
     bool cargarPalabras();
     bool seleccionarPalabrasAzar();
-    bool buscarCaracter(char caracter);
-    void lanzarPalabra() const;
+    bool buscarCaracter(QChar caracter);
+    QString lanzarPalabra() const;
 
 
 };

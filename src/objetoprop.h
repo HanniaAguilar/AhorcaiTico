@@ -11,15 +11,15 @@ class ObjetoProp: public QGraphicsSvgItem
 {
     private:
      QString m_nombre;
-     char m_caracter;
+     QChar m_caracter;
 
     public:
         ObjetoProp(QString m_nombre);
         ~ObjetoProp();
         void mousePressEvent(QGraphicsSceneMouseEvent * evento);
         void esconderObjeto(ObjetoProp* objeto);
-        void setChar(char caracter);
-        char getChar() const;
+        void setChar(QChar caracter);
+        QChar getChar();
 };
 
 #endif // OBJETOPROP_H
