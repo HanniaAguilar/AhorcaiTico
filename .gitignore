@@ -2,8 +2,9 @@
 *.exe
 *.o
 *.autosave
+*.user*
 bin/
-build/
+build*/
 docs/html/
 docs/latex/
 solution
