@@ -43,7 +43,7 @@ void Teclas::mostrarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
 {
     /// objeto temporal para cargar las teclas
     ObjetoProp* temporal;
-    QString alfabeto="QWERTYUIOPASDFGHJKLNZXCVBNM";
+    //QString alfabeto="QWERTYUIOPASDFGHJKLNZXCVBNM";
 
     /// manejar posiciones
     int ejeX=360,ejeY=300;
