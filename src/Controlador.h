@@ -1,7 +1,7 @@
 #ifndef CONTROLADOR_H
 #define CONTROLADOR_H
 
-#include "MainWindow.h"
+#include "Vista.h"
 #include <QSvgRenderer>
 #include <QtMath>
 #include <QApplication>
@@ -11,11 +11,10 @@
 #include <QPoint>
 #include <QVector>
 #include <Random>
-//#include <Chrono>
+#include <Chrono>
 
 
 class QGraphicsScene;
-
 
 class Controlador : public QApplication
 {
@@ -24,7 +23,7 @@ class Controlador : public QApplication
     protected:
 
     QGraphicsScene* m_escena;
-    MainWindow* m_vista;
+    Vista* m_vista;
 
 
     public:
@@ -32,9 +31,7 @@ class Controlador : public QApplication
     Controlador(int &argc, char **argv, int flags = ApplicationFlags);
     ~Controlador();
     int correr();
-    
+
     private slots:
 
 };
-
-#endif // CONTROLADOR_H

@@ -12,17 +12,21 @@ Controlador::Controlador(int &argc, char **argv, int flags)
 int Controlador::correr()
 {
     //Cargar palabras
-    
+
     //Elegir palabras al azar
-    
+
     //Cargar las imagenes prop a la escena
-        
+
     m_escena = new QGraphicsScene();
-    m_vista = new MainWindow(m_escena);
+    m_vista = new Vista(m_escena);
+    #if ! defined(Q_OS_ANDROID) && ! defined(Q_OS_IOS)
+          m_vista->resize(800, 600);
+    #endif
+    m_escena->setSceneRect(m_vista->rect());
     m_vista->insertarComponentes(m_escena);
     m_vista->show();
-    
-    //Crear un ciclo para jugar (Quiza se deba crear otro separado de este metodo) 
+
+    //Crear un ciclo para jugar (Quiza se deba crear otro separado de este metodo)
     return exec();
 }
 

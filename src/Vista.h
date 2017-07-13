@@ -1,7 +1,7 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef VISTA_H
+#define VISTA_H
 
-#include "mainwindow.h"
+#include "vista.h"
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QSvgRenderer>
@@ -11,7 +11,7 @@
 
 class Controlador;
 
-class MainWindow:public QGraphicsView
+class Vista:public QGraphicsView
 {
 
     protected:
@@ -21,10 +21,10 @@ class MainWindow:public QGraphicsView
       Teclas* teclas;
 
     public:
-        MainWindow(QGraphicsScene* escena);
-        ~MainWindow();
+        Vista(QGraphicsScene* escena);
+        ~Vista();
         void insertarComponentes(QGraphicsScene* escena);
         void dibujeFondo(QGraphicsScene* m_escena);
 };
 
-#endif // MAINWINDOW_H
+#endif // VISTA_H
