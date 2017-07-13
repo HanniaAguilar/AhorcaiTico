@@ -18,7 +18,7 @@ Vista::Vista(QGraphicsScene *escena)
 
 void Vista::insertarComponentes(QGraphicsScene* m_escena)
 {
-    m_svgRenderer = new QSvgRenderer(QString(":/Resources/drawing.svg"), this);
+    m_svgRenderer = new QSvgRenderer(QString(":/Resources/assets.svg"), this);
 
     this->dibujeFondo(m_escena);
     this->setBackgroundBrush(QBrush(Qt::white, Qt::SolidPattern));
