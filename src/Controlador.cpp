@@ -17,7 +17,7 @@ int Controlador::correr()
     m_escena = new QGraphicsScene();
     m_vista = new Vista(m_escena);
     m_escena->setSceneRect(m_vista->rect());
-    m_vista->insertarComponentes(m_escena);
+    m_vista->insertarComponentes(m_escena,this->diccionario);////se envia a si mismo
     m_vista->show();
 
     diccionario->seleccionarPalabrasAzar();
@@ -31,3 +31,5 @@ Controlador::~Controlador()
     delete m_escena;
     delete m_vista;
 }
+
+

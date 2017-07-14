@@ -1,10 +1,11 @@
 #include "Vista.h"
 
+
 class ObjectoProp;
 class PartesCuerpo;
 
 Vista::Vista(QGraphicsScene *escena)
-    :QGraphicsView(escena)    
+    :QGraphicsView(escena)
     ,m_svgRenderer(Q_NULLPTR)
     ,m_fondo(Q_NULLPTR)
     ,teclas (Q_NULLPTR)
@@ -15,7 +16,7 @@ Vista::Vista(QGraphicsScene *escena)
   #endif
 }
 
-void Vista::insertarComponentes(QGraphicsScene* m_escena)
+void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* d)//ahora recibe un diccionario
 {
     m_svgRenderer = new QSvgRenderer(QString(":/Resources/assets.svg"), this);
 
@@ -25,7 +26,7 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena)
     this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     /// Se agrega el teclado
-    teclas = new Teclas();
+    teclas = new Teclas(d);
     teclas->agregarTeclado();
     teclas->mostrarTeclado(m_svgRenderer,m_escena);
 
@@ -37,10 +38,10 @@ void Vista::dibujeFondo (QGraphicsScene* m_escena){
      m_fondo = new ObjetoProp("fondo");
      m_fondo->setSharedRenderer(m_svgRenderer);
      m_fondo->setPos(45,62);
-     m_escena->addItem(m_fondo);     
-     m_fondo->setZValue(-1);     
+     m_escena->addItem(m_fondo);
+     m_fondo->setZValue(-1);
 }
 
 Vista::~Vista()
-{    
+{
 }
