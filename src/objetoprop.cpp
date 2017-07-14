@@ -2,7 +2,7 @@
 
 ObjetoProp::ObjetoProp(QString nombre,Diccionario* d)//ahora recibe un diccionario
     :m_nombre(nombre)
-    ,dic(d)//ahora recibe un diccionario
+    ,diccionario(d)//ahora recibe un diccionario
 {
     setElementId(nombre);
 }
@@ -132,7 +132,7 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
         this->setOpacity(0.0);
 
     //aqui es donde es de utilidad el puntero, porque puedo hacer esto:
-    this->dic->buscarCaracter(this->getChar());
+    this->diccionario->buscarCaracter(this->getChar());
 
 
 }

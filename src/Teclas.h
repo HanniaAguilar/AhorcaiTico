@@ -16,7 +16,7 @@ class Teclas
 {
    protected:
     QVector<QString> v_teclado;
-    Diccionario* teclasDic;///agrego para que tambien tenga un puntero a ese dicccionario
+    Diccionario* teclasDiccionario;///agrego para que tambien tenga un puntero a ese dicccionario
 
    public:
     QVector<ObjetoProp*> v_objetosProp;

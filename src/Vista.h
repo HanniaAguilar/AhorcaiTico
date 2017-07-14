@@ -24,7 +24,7 @@ class Vista:public QGraphicsView
     public:
         Vista(QGraphicsScene* escena);
         ~Vista();
-        void insertarComponentes(QGraphicsScene* escena);
+        void insertarComponentes(QGraphicsScene* escena, Diccionario* d);
         void dibujeFondo(QGraphicsScene* m_escena);
 };
 

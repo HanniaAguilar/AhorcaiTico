@@ -14,7 +14,7 @@ class ObjetoProp: public QGraphicsSvgItem
     private:
      QString m_nombre;
      QChar m_caracter;
-     Diccionario* dic;///agrego para que tambien tenga un puntero a ese dicccionario
+     Diccionario* diccionario;///agrego para que tambien tenga un puntero a ese dicccionario
 
     public:
         ObjetoProp(QString m_nombre, Diccionario* d=Q_NULLPTR);//ahora recibe un diccionario

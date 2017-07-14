@@ -1,7 +1,7 @@
 #include "Teclas.h"
 
 Teclas::Teclas(Diccionario* d)
-:teclasDic(d)
+:teclasDiccionario(d)
 {
 }
 
@@ -62,7 +62,7 @@ void Teclas::mostrarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
             }
 
             /// asignando propiedades a las teclas
-            temporal= new ObjetoProp(v_teclado[indice],teclasDic);//ahora recibe un diccionario
+            temporal= new ObjetoProp(v_teclado[indice],teclasDiccionario);//ahora recibe un diccionario
             temporal->setSharedRenderer(svgRenderer);
             temporal->setChar(alfabeto[indice]);
             temporal->setZValue(1);
