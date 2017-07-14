@@ -16,7 +16,7 @@ Vista::Vista(QGraphicsScene *escena)
   #endif
 }
 
-void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* d)//ahora recibe un diccionario
+void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionario)//ahora recibe un diccionario
 {
     m_svgRenderer = new QSvgRenderer(QString(":/Resources/assets.svg"), this);
 
@@ -26,7 +26,7 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* d)//ahora 
     this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     /// Se agrega el teclado
-    teclas = new Teclas(d);
+    teclas = new Teclas(diccionario);
     teclas->agregarTeclado();
     teclas->mostrarTeclado(m_svgRenderer,m_escena);
 

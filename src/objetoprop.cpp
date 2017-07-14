@@ -129,10 +129,15 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
     if(this->elementId()!="fondo"&&this->elementId()!="cabeza"&&this->elementId()!="torso"
             &&this->elementId()!="brazoDer"&&this->elementId()!="BrazoIzq"&&this->elementId()!="pieIzq"
             &&this->elementId()!="pieDer")
+    {
         this->setOpacity(0.0);
+        this->diccionario->buscarCaracter(this->getChar());
+        this->diccionario->seleccionarPalabrasAzar();
+    }
+
 
     //aqui es donde es de utilidad el puntero, porque puedo hacer esto:
-    this->diccionario->buscarCaracter(this->getChar());
+
 
 
 }
