@@ -6,6 +6,14 @@ PartesCuerpo::PartesCuerpo()
 {
 }
 
+PartesCuerpo::PartesCuerpo(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
+    :m_ContError(0)
+    ,m_escena(escena)
+    ,m_svgRenderer(svgRenderer)
+{
+
+}
+
 /*void PartesCuerpo::agregarPartes()
 {
     v_partes.append("cabeza");
@@ -16,7 +24,7 @@ PartesCuerpo::PartesCuerpo()
     v_partes.append("PieIzq");
 }*/
 
-void PartesCuerpo::mostrarPartes(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
+void PartesCuerpo::mostrarPartes()
 {
 
         /// objeto temporal para cargar las partes
@@ -25,55 +33,55 @@ void PartesCuerpo::mostrarPartes(QSvgRenderer *svgRenderer, QGraphicsScene *esce
         if(m_ContError==0){
             temporal= new ObjetoProp("cabeza");
             temporal->setElementId("cabeza");
-            temporal->setSharedRenderer(svgRenderer);
+            temporal->setSharedRenderer(m_svgRenderer);
             temporal->setZValue(1);
             temporal->setPos(200,105);
-            escena->addItem(temporal);
+            m_escena->addItem(temporal);
         }
 
         if(m_ContError==1){
             temporal= new ObjetoProp("torso");
             temporal->setElementId("torso");
-            temporal->setSharedRenderer(svgRenderer);
+            temporal->setSharedRenderer(m_svgRenderer);
             temporal->setZValue(1);
             temporal->setPos(238,177);
-            escena->addItem(temporal);
+            m_escena->addItem(temporal);
         }
 
         if(m_ContError==2){
             temporal= new ObjetoProp("brazoDer");
             temporal->setElementId("brazoDer");
-            temporal->setSharedRenderer(svgRenderer);
+            temporal->setSharedRenderer(m_svgRenderer);
             temporal->setZValue(1);
             temporal->setPos(210,195);
-            escena->addItem(temporal);
+            m_escena->addItem(temporal);
         }
 
         if(m_ContError==3){
             temporal= new ObjetoProp("BrazoIzq");
             temporal->setElementId("BrazoIzq");
-            temporal->setSharedRenderer(svgRenderer);
+            temporal->setSharedRenderer(m_svgRenderer);
             temporal->setZValue(1);
             temporal->setPos(292,180);
-            escena->addItem(temporal);
+            m_escena->addItem(temporal);
         }
 
         if(m_ContError==4){
             temporal= new ObjetoProp("pieDer");
             temporal->setElementId("pieDer");
-            temporal->setSharedRenderer(svgRenderer);
+            temporal->setSharedRenderer(m_svgRenderer);
             temporal->setZValue(1);
             temporal->setPos(242,248);
-            escena->addItem(temporal);
+            m_escena->addItem(temporal);
         }
 
         if(m_ContError==5){
             temporal= new ObjetoProp("pieIzq");
             temporal->setElementId("pieIzq");
-            temporal->setSharedRenderer(svgRenderer);
+            temporal->setSharedRenderer(m_svgRenderer);
             temporal->setZValue(1);
             temporal->setPos(267,248);
-            escena->addItem(temporal);
+            m_escena->addItem(temporal);
         }
 
         ++m_ContError;
@@ -108,3 +116,10 @@ void PartesCuerpo::fijarPosiciones()
     v_objetosPartes[5]->setPos(267,248);
 }
 */
+
+void PartesCuerpo::revisarEvento(bool encontrado)
+{
+    if(!encontrado){
+        mostrarPartes();
+    }
+}

@@ -9,6 +9,7 @@
 #include "Teclas.h"
 #include "marcador.h"
 #include "PartesCuerpo.h"
+#include "Raya.h"
 
 class Controlador;
 
@@ -20,6 +21,7 @@ class Vista:public QGraphicsView
       Teclas* teclas;
       Marcador* m_marcador;
       PartesCuerpo* cuerpo;
+      Raya* rayas;
 
     public:
         Vista(QGraphicsScene* escena);

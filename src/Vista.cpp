@@ -1,5 +1,5 @@
 #include "Vista.h"
-
+#include "Raya.h"
 
 class ObjectoProp;
 class PartesCuerpo;
@@ -30,8 +30,18 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     teclas->agregarTeclado();
     teclas->mostrarTeclado(m_svgRenderer,m_escena);
 
-    //cuerpo = new PartesCuerpo();
-    //cuerpo->mostrarPartes(m_svgRenderer, m_escena);
+    m_marcador = new Marcador("Puntos",0,Qt::black);
+    m_marcador->setPos(700,0);
+    m_escena->addItem(m_marcador);
+
+    rayas= new Raya("x",Qt::black);
+    rayas->setPos(0,0);
+    m_escena->addItem(rayas);
+    rayas->mostrarRayas(m_svgRenderer,m_escena,9);
+
+    cuerpo = new PartesCuerpo(m_svgRenderer, m_escena);
+    cuerpo->mostrarPartes();
+    QObject::connect(diccionario,SIGNAL(nuevoEvento(bool)),cuerpo,SLOT(revisarEvento(bool)));
 }
 
 void Vista::dibujeFondo (QGraphicsScene* m_escena){

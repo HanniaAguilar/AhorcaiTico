@@ -33,6 +33,7 @@ class Controlador : public QApplication
     QSvgRenderer* svgRenderer = nullptr;
     /// mecanica del juego
     Diccionario* diccionario;
+    /// Rayas
 
    public:
     ///controlador

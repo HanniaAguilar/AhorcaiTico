@@ -132,7 +132,6 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
     {
         this->setOpacity(0.0);
         this->diccionario->buscarCaracter(this->getChar());
-        this->diccionario->seleccionarPalabrasAzar();
     }
 
 

@@ -5,20 +5,26 @@
 #include <string>
 #include <QVector>
 #include <QString>
+#include <QObject>
 
 // TODO: renombrar a Diccionario
-class Diccionario
+class Diccionario : public QObject
 {
-    private:
+    Q_OBJECT
+  private:
     QString m_palabra;
     QVector<QString> v_palabras;
-    public:
 
+  public:
     Diccionario();
     bool cargarPalabras();
     bool seleccionarPalabrasAzar();
     bool buscarCaracter(QChar caracter);
     QString lanzarPalabra() const;
+    int tamanoPalabra() const;
+
+  signals:
+    void nuevoEvento(bool encontrado);
 
 
 };

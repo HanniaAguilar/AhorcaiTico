@@ -48,10 +48,15 @@ bool Diccionario::buscarCaracter(QChar caracter)
             caracterEncontrado=true;
         }
     }
-    return caracterEncontrado;
+    emit nuevoEvento(caracterEncontrado);
 }
 
 QString Diccionario::lanzarPalabra() const
 {
     return m_palabra;
+}
+
+int Diccionario::tamanoPalabra() const
+{
+    return m_palabra.length();
 }

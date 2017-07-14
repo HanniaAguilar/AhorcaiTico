@@ -22,6 +22,8 @@ int Controlador::correr()
 
     diccionario->seleccionarPalabrasAzar();
     diccionario->lanzarPalabra();
+
+
     //diccionario->buscarCaracter('A');
     return exec();
 }

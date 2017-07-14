@@ -25,5 +25,7 @@ class Teclas
     Teclas(Diccionario* diccionario);//ahora recibe un diccionario
     void agregarTeclado();
     void mostrarTeclado(QSvgRenderer* svgRenderer, QGraphicsScene *escena);
+
+
 };
 #endif // TECLAS_H

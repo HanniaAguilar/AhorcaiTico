@@ -3,7 +3,6 @@
 
 #include <QGraphicsSvgItem>
 
-#include <QGraphicsSvgItem>
 #include "Diccionario.h"
 
 class Diccionario;
