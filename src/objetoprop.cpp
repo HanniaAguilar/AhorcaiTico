@@ -124,11 +124,22 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
     }*/
     //std::cout<<this->getChar()<<std::endl;
     //this->setPos(-100,-100);
+    QString prueba= "hannia";
     std::cout<<"TOUCHED("<<this->elementId().toStdString()<<")"<<std::endl;
     if(this->elementId()!="fondo"&&this->elementId()!="cabeza"&&this->elementId()!="torso"
             &&this->elementId()!="brazoDer"&&this->elementId()!="BrazoIzq"&&this->elementId()!="pieIzq"
             &&this->elementId()!="pieDer")
+    {
         this->setOpacity(0.0);
+        for(int index=0;index<prueba.length();++index){
+            if(this->getChar().toUpper()==prueba[index].toUpper()){
+                std::cout<<"mostrar caracter:"<<index<<std::endl;//llamar metodo que muestra los caracteres deseados
+            }
+        }
+    }
+
+
+
 }
 
 void ObjetoProp::setChar(QChar caracter)
