@@ -5,7 +5,7 @@
 
 class Marcador : public QGraphicsTextItem
 {
-    Q_OBJECT
+   Q_OBJECT
 
    protected:
     /// marcador de puntos del jugador
@@ -26,8 +26,7 @@ class Marcador : public QGraphicsTextItem
     void restablecerMarcador();
 
    protected:
-    void actualizarMarcador();
-
+   void actualizarMarcador();
 };
 
 #endif // MARCADOR_H

@@ -1,6 +1,5 @@
 #include "Controlador.h"
 
-
 Controlador::Controlador(int &argc, char **argv, int flags)
     : QApplication(argc, argv, flags)
     , m_escena(nullptr)
@@ -12,8 +11,8 @@ Controlador::Controlador(int &argc, char **argv, int flags)
 int Controlador::correr()
 {
     //Cargar palabras
-    mecanicaJuego= new MecanicaJuego();
-    mecanicaJuego->cargarPalabras();
+    diccionario= new Diccionario();
+    diccionario->cargarPalabras();
 
     m_escena = new QGraphicsScene();
     m_vista = new Vista(m_escena);
@@ -21,8 +20,8 @@ int Controlador::correr()
     m_vista->insertarComponentes(m_escena);
     m_vista->show();
 
-    mecanicaJuego->seleccionarPalabrasAzar();
-    mecanicaJuego->lanzarPalabra();
+    diccionario->seleccionarPalabrasAzar();
+    diccionario->lanzarPalabra();
     return exec();
 }
 

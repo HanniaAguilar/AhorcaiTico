@@ -5,22 +5,22 @@ TEMPLATE = app
 CONFIG += c++11
 
 HEADERS += \
-    mecanicajuego.h \
     marcador.h \
     Controlador.h \
     Teclas.h \
     objetoprop.h \
     Vista.h \
-    PartesCuerpo.h
+    PartesCuerpo.h \
+    Diccionario.h
 
 SOURCES += main.cpp \
-    mecanicajuego.cpp \
     marcador.cpp \
     Controlador.cpp \
     Teclas.cpp \
     objetoprop.cpp \
     Vista.cpp \
-    PartesCuerpo.cpp
+    PartesCuerpo.cpp \
+    Diccionario.cpp
 
 mac {
         Resources.files = Resources

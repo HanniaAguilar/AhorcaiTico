@@ -1,9 +1,7 @@
 #include "Teclas.h"
 
-
 Teclas::Teclas()
 {
-
 }
 
 void Teclas::agregarTeclado()

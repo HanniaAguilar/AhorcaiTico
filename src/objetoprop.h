@@ -3,7 +3,6 @@
 
 #include <QGraphicsSvgItem>
 
-
 class MecanicaJuego;
 class Controlador;
 

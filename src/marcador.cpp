@@ -14,7 +14,6 @@ Marcador::Marcador(const QString &tipoMarcador, int puntosIniciales, QColor colo
 
 Marcador::~Marcador()
 {
-
 }
 
 void Marcador::incrementePuntos()

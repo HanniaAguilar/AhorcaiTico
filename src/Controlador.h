@@ -3,7 +3,7 @@
 
 #include <QApplication>
 #include "Vista.h"
-#include "mecanicajuego.h"
+#include "Diccionario.h"
 #include "Teclas.h"
 #include <QSvgRenderer>
 #include <QtMath>
@@ -13,13 +13,11 @@
 #include <QSequentialAnimationGroup>
 #include <QPoint>
 #include <QVector>
-//#include <Random>
 
 class QGraphicsScene;
 class QSvgRenderer;
 class QGraphicsView;
 class Marcador;
-
 
 class Controlador : public QApplication
 {
@@ -34,7 +32,7 @@ class Controlador : public QApplication
     /// para utilizar archivos svg
     QSvgRenderer* svgRenderer = nullptr;
     /// mecanica del juego
-    MecanicaJuego* mecanicaJuego;
+    Diccionario* diccionario;
 
    public:
     ///controlador
@@ -43,7 +41,6 @@ class Controlador : public QApplication
     ~Controlador();
     /// metodo de correr el juego
     int correr();
-
 };
 
 #endif // CONTROLADOR_H

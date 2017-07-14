@@ -10,12 +10,10 @@
 #include "marcador.h"
 #include "PartesCuerpo.h"
 
-
 class Controlador;
 
 class Vista:public QGraphicsView
 {
-
     protected:
       ObjetoProp* m_componente;
       QSvgRenderer* m_svgRenderer;
