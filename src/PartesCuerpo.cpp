@@ -36,7 +36,7 @@ void PartesCuerpo::mostrarPartes(QSvgRenderer *svgRenderer, QGraphicsScene *esce
         temporal->setSharedRenderer(svgRenderer);
         temporal->setZValue(1);
         //temporal->setScale(3);
-        temporal->setPos(230,180);
+        temporal->setPos(238,177);
         escena->addItem(temporal);
 
         temporal= new ObjetoProp("brazoDer");
@@ -44,7 +44,7 @@ void PartesCuerpo::mostrarPartes(QSvgRenderer *svgRenderer, QGraphicsScene *esce
         temporal->setSharedRenderer(svgRenderer);
         temporal->setZValue(1);
         //temporal->setScale(3);
-        temporal->setPos(208,195);
+        temporal->setPos(210,195);
         escena->addItem(temporal);
 
         temporal= new ObjetoProp("BrazoIzq");
@@ -52,7 +52,7 @@ void PartesCuerpo::mostrarPartes(QSvgRenderer *svgRenderer, QGraphicsScene *esce
         temporal->setSharedRenderer(svgRenderer);
         temporal->setZValue(1);
         //temporal->setScale(3);
-        temporal->setPos(273,180);
+        temporal->setPos(292,180);
         escena->addItem(temporal);
 
         temporal= new ObjetoProp("pieDer");
@@ -60,7 +60,7 @@ void PartesCuerpo::mostrarPartes(QSvgRenderer *svgRenderer, QGraphicsScene *esce
         temporal->setSharedRenderer(svgRenderer);
         temporal->setZValue(1);
         //temporal->setScale(3);
-        temporal->setPos(233,236);
+        temporal->setPos(242,248);
         escena->addItem(temporal);
 
         temporal= new ObjetoProp("pieIzq");
@@ -68,7 +68,7 @@ void PartesCuerpo::mostrarPartes(QSvgRenderer *svgRenderer, QGraphicsScene *esce
         temporal->setSharedRenderer(svgRenderer);
         temporal->setZValue(1);
         //temporal->setScale(3);
-        temporal->setPos(256,235);
+        temporal->setPos(267,248);
         escena->addItem(temporal);
 }
 
