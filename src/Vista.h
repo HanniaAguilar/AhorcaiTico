@@ -14,8 +14,7 @@ class Controlador;
 
 class Vista:public QGraphicsView
 {
-    protected:
-      ObjetoProp* m_componente;
+    protected:      
       QSvgRenderer* m_svgRenderer;
       ObjetoProp* m_fondo;
       Teclas* teclas;

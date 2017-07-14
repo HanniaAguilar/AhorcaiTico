@@ -17,10 +17,10 @@ SOURCES += main.cpp \
     marcador.cpp \
     Controlador.cpp \
     Teclas.cpp \
-    objetoprop.cpp \
     Vista.cpp \
     PartesCuerpo.cpp \
-    Diccionario.cpp
+    Diccionario.cpp \
+    Objetoprop.cpp
 
 mac {
         Resources.files = Resources

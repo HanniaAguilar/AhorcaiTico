@@ -41,7 +41,6 @@ void Teclas::mostrarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
 {
     /// objeto temporal para cargar las teclas
     ObjetoProp* temporal;
-    //QString alfabeto="QWERTYUIOPASDFGHJKLNZXCVBNM";
 
     /// manejar posiciones
     int ejeX=360,ejeY=300;
@@ -63,8 +62,7 @@ void Teclas::mostrarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
             /// asignando propiedades a las teclas
             temporal= new ObjetoProp(v_teclado[indice]);
             temporal->setSharedRenderer(svgRenderer);
-            temporal->setZValue(1);
-            //temporal->setScale(5);
+            temporal->setZValue(1);           
             escena->addItem(temporal);
             temporal->setPos(ejeX,ejeY);
             v_objetosProp.append(temporal);

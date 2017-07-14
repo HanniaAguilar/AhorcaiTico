@@ -2,13 +2,12 @@
 
 #include <QString>
 #include <QFile>
-#include <fstream>
-#include <iostream>
 #include <QMessageBox>
 #include <QTextStream>
 
 Diccionario::Diccionario()
 {
+
 }
 
 bool Diccionario::cargarPalabras()
@@ -29,10 +28,13 @@ bool Diccionario::cargarPalabras()
      return true;
 }
 
+#include <iostream>
+
 bool Diccionario::seleccionarPalabrasAzar()
 {
     size_t indiceAzar = rand() % v_palabras.size();
     m_palabra = v_palabras[indiceAzar];//definir string palabra en el .h
+    std::cout<<m_palabra.toStdString()<<std::endl;
     //aqui llamar metodo para dibujar las rayas
     return true;
 }
@@ -41,11 +43,10 @@ bool Diccionario::buscarCaracter(QChar caracter)
 {
     bool caracterEncontrado=false;
     for(int index=0;index<m_palabra.length();++index){
-        if(caracter==m_palabra[index]){
+        if(caracter.toUpper()==m_palabra[index].toUpper()){
             std::cout<<"mostrar caracter:"<<index<<std::endl;//llamar metodo que muestra los caracteres deseados
             caracterEncontrado=true;
         }
-
     }
     return caracterEncontrado;
 }
