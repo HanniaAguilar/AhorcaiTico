@@ -39,7 +39,10 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     m_escena->addItem(rayas);
     rayas->mostrarRayas(m_svgRenderer,m_escena,9);
 
-    cuerpo = new PartesCuerpo(m_svgRenderer, m_escena);
+    cuerpo = new PartesCuerpo(m_svgRenderer, m_escena);   
+    cuerpo->agregarPartes();
+    cuerpo->colocarCuerpo();
+
     /// se conectan eventos de ambas clases
     QObject::connect(diccionario,SIGNAL(nuevoEvento(bool)),cuerpo,SLOT(revisarEvento(bool)));
 }

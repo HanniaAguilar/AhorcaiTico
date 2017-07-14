@@ -13,9 +13,11 @@ class PartesCuerpo : public QObject
     int m_ContError;
     QGraphicsScene* m_escena;
     QSvgRenderer* m_svgRenderer;
+    ObjetoProp* temporal;
 
      //QVector<QString> v_partes;
    protected:
+     QVector<QString> v_Partes;
      QVector<ObjetoProp*> v_objetosPartes;
     //public:
 
@@ -24,8 +26,11 @@ class PartesCuerpo : public QObject
      PartesCuerpo();
      PartesCuerpo(QSvgRenderer* svgRenderer, QGraphicsScene *escena);
      //void agregarPartes();
+     void agregarPartes();
+     void colocarCuerpo();
      void mostrarPartes();
      void quitarCuerpo();
+     void darPos(int cont);
      //void cargarPartes(QSvgRenderer *svgRenderer, QGraphicsScene *escena);
      //void fijarPosiciones();
     public slots:

@@ -1,7 +1,7 @@
 #include "Teclas.h"
 
 Teclas::Teclas(Diccionario* diccionario)
-:teclasDiccionario(diccionario)
+    :teclasDiccionario (diccionario)
 {
 }
 

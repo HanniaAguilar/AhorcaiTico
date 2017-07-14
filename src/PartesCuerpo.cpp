@@ -2,7 +2,8 @@
 #include "objetoprop.h"
 
 PartesCuerpo::PartesCuerpo()
-    :m_ContError(0)
+    : m_ContError(0)
+    , temporal(nullptr)
 {
 }
 
@@ -11,97 +12,43 @@ PartesCuerpo::PartesCuerpo(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
     ,m_escena(escena)
     ,m_svgRenderer(svgRenderer)
 {
-
 }
 
+void PartesCuerpo::agregarPartes()
+{
+    v_Partes.append("cabeza");
+    v_Partes.append("torso");
+    v_Partes.append("brazoDer");
+    v_Partes.append("BrazoIzq");
+    v_Partes.append("pieDer");
+    v_Partes.append("pieIzq");
+    v_Partes.append("murio");
+}
+
+void PartesCuerpo::colocarCuerpo(){
+    for(int indice=0;indice<v_Partes.size();++indice){
+            temporal= new ObjetoProp(v_Partes[indice]);
+            temporal->setSharedRenderer(m_svgRenderer);
+            temporal->setZValue(1);
+            darPos(indice);
+            temporal->setOpacity(0);
+            m_escena->addItem(temporal);
+            v_objetosPartes.append(temporal);
+        }
+}
 
 void PartesCuerpo::mostrarPartes()
 {
-
-        /// objeto temporal para cargar las partes
-        ObjetoProp* temporal;
-
-        if(m_ContError==0){
-            temporal= new ObjetoProp("cabeza");
-            temporal->setElementId("cabeza");
-            temporal->setSharedRenderer(m_svgRenderer);
-            temporal->setZValue(1);
-            temporal->setPos(200,105);
-            m_escena->addItem(temporal);
-            v_objetosPartes.push_back(temporal);
-        }
-
-        if(m_ContError==1){
-            temporal= new ObjetoProp("torso");
-            temporal->setElementId("torso");
-            temporal->setSharedRenderer(m_svgRenderer);
-            temporal->setZValue(1);
-            temporal->setPos(238,177);
-            m_escena->addItem(temporal);
-            v_objetosPartes.push_back(temporal);
-        }
-
-        if(m_ContError==2){
-            temporal= new ObjetoProp("brazoDer");
-            temporal->setElementId("brazoDer");
-            temporal->setSharedRenderer(m_svgRenderer);
-            temporal->setZValue(1);
-            temporal->setPos(210,195);
-            m_escena->addItem(temporal);
-            v_objetosPartes.push_back(temporal);
-        }
-
-        if(m_ContError==3){
-            temporal= new ObjetoProp("BrazoIzq");
-            temporal->setElementId("BrazoIzq");
-            temporal->setSharedRenderer(m_svgRenderer);
-            temporal->setZValue(1);
-            temporal->setPos(292,180);
-            m_escena->addItem(temporal);
-            v_objetosPartes.push_back(temporal);
-        }
-
-        if(m_ContError==4){
-            temporal= new ObjetoProp("pieDer");
-            temporal->setElementId("pieDer");
-            temporal->setSharedRenderer(m_svgRenderer);
-            temporal->setZValue(1);
-            temporal->setPos(242,248);
-            m_escena->addItem(temporal);
-            v_objetosPartes.push_back(temporal);
-        }
-
-        if(m_ContError==5){
-            temporal= new ObjetoProp("pieIzq");
-            temporal->setElementId("pieIzq");
-            temporal->setSharedRenderer(m_svgRenderer);
-            temporal->setZValue(1);
-            temporal->setPos(267,248);
-            m_escena->addItem(temporal);
-            v_objetosPartes.push_back(temporal);
-        }
-
-        if(m_ContError==6){
-            temporal= new ObjetoProp("murio");
-            temporal->setElementId("murio");
-            temporal->setSharedRenderer(m_svgRenderer);
-            temporal->setZValue(1);
-            temporal->setPos(5,20);
-            m_escena->addItem(temporal);
-            v_objetosPartes.push_back(temporal);
-        }
-
-        if(m_ContError==7){
-            quitarCuerpo();
-            m_ContError=-1;
-            emit nuevaPalabra();
-        }
-
+    if(m_ContError==7){
+        quitarCuerpo();
+        m_ContError=0;
+        emit nuevaPalabra();
+    }
+    else{
+        v_objetosPartes[m_ContError]->setOpacity(1);
         ++m_ContError;
-
-
+    }
 }
-
 
 void PartesCuerpo::revisarEvento(bool encontrado)
 {
@@ -114,5 +61,31 @@ void PartesCuerpo::quitarCuerpo()
 {
     for(int indice=0; indice<v_objetosPartes.size();++indice){
         v_objetosPartes[indice]->setOpacity(0);
+    }
+}
+
+void PartesCuerpo::darPos(int cont){
+    switch(cont){
+    case 0:
+     temporal->setPos(200,105);
+        break;
+    case 1:
+     temporal->setPos(238,177);
+        break;
+    case 2:
+     temporal->setPos(210,195);
+        break;
+    case 3:
+     temporal->setPos(292,180);
+        break;
+    case 4:
+     temporal->setPos(242,248);
+        break;
+    case 5:
+     temporal->setPos(267,248);
+        break;
+    case 6:
+     temporal->setPos(5,20);
+        break;
     }
 }
