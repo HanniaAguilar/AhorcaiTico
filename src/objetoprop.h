@@ -19,12 +19,11 @@ class ObjetoProp: public QGraphicsSvgItem
         ObjetoProp(QString m_nombre, Diccionario* d=Q_NULLPTR);//ahora recibe un diccionario
         ~ObjetoProp();
         void mousePressEvent(QGraphicsSceneMouseEvent * evento);
-        void esconderObjeto(ObjetoProp* objeto);
+        void esconderObjeto(ObjetoProp* objeto);        
         void setChar(QChar caracter);
         QChar getChar();
 
-        ///signals slots
-        ///
+        ///signals slots        
 };
 
 #endif // OBJETOPROP_H

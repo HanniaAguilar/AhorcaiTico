@@ -52,7 +52,7 @@ void PartesCuerpo::mostrarPartes()
 
 void PartesCuerpo::revisarEvento(bool encontrado)
 {
-    if(!encontrado){
+    if(!encontrado){        
         mostrarPartes();
     }
 }

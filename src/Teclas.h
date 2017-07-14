@@ -22,7 +22,7 @@ class Teclas
     QVector<ObjetoProp*> v_objetosProp;
 
    public:
-    Teclas(Diccionario* diccionario);//ahora recibe un diccionario
+    Teclas(Diccionario* diccionario);
     void agregarTeclado();
     void mostrarTeclado(QSvgRenderer* svgRenderer, QGraphicsScene *escena);
 
