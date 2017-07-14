@@ -26,6 +26,9 @@ class Diccionario : public QObject
   signals:
     void nuevoEvento(bool encontrado);
 
+  public slots:
+    void crearNuevaPalabra();
+
 
 };
 #endif // DICCIONARIO_H

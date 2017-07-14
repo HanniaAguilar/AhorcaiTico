@@ -60,3 +60,8 @@ int Diccionario::tamanoPalabra() const
 {
     return m_palabra.length();
 }
+
+void Diccionario::crearNuevaPalabra()
+{
+    seleccionarPalabrasAzar();
+}
