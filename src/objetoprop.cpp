@@ -21,6 +21,9 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
     if(this->elementId()=="murio"){
         this->setOpacity(0.0);
     }
+    if(this->elementId()=="gano"){
+        this->setPos(-10,-10);
+    }
 }
 
 void ObjetoProp::setChar(QChar caracter)

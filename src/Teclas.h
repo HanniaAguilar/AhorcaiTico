@@ -11,9 +11,11 @@
 #include <random>
 #include <chrono>
 #include "Diccionario.h"
+#include <QObject>
 
-class Teclas
+class Teclas : public QObject
 {
+    Q_OBJECT
    protected:
     QVector<QString> v_teclado;
     Diccionario* teclasDiccionario;///agrego para que tambien tenga un puntero a ese dicccionario
@@ -24,7 +26,11 @@ class Teclas
    public:
     Teclas(Diccionario* diccionario);
     void agregarTeclado();
-    void mostrarTeclado(QSvgRenderer* svgRenderer, QGraphicsScene *escena);
+    void cargarTeclado(QSvgRenderer* svgRenderer, QGraphicsScene *escena);
+    void mostrarTeclado();
+
+   public slots:
+    void restablecerTeclado();
 
 
 };

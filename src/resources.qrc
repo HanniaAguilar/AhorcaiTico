@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>Resources/assets.svg</file>
         <file>Resources/Diccionario.txt</file>
+        <file>Resources/Diccionario_sin_acentos.txt</file>
     </qresource>
 </RCC>

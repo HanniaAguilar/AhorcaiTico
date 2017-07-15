@@ -28,7 +28,8 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     /// Se agrega el teclado
     teclas = new Teclas(diccionario);
     teclas->agregarTeclado();
-    teclas->mostrarTeclado(m_svgRenderer,m_escena);
+    teclas->cargarTeclado(m_svgRenderer,m_escena);
+    teclas->mostrarTeclado();
 
     m_marcador = new Marcador("Puntos",0,Qt::black);
     m_marcador->setPos(700,0);
@@ -45,7 +46,14 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
 
     /// se conectan eventos de ambas clases
     QObject::connect(diccionario,SIGNAL(nuevoEvento(bool)),cuerpo,SLOT(revisarEvento(bool)));
+    QObject::connect(diccionario,SIGNAL(nuevoCaracterEncontrado()),diccionario,SLOT(verificarGane()));
+    QObject::connect(diccionario,SIGNAL(palabraEcontrada()),m_marcador,SLOT(incrementePuntos()));
+    QObject::connect(diccionario,SIGNAL(palabraEcontrada()),cuerpo,SLOT(esconderCuerpo()));
+    QObject::connect(diccionario,SIGNAL(palabraEcontrada()),teclas,SLOT(restablecerTeclado()));
+    //QObject::connect(diccionario,SIGNAL(palabraEcontrada()),cuerpo,SLOT(dibujarGane()));
+
 }
+
 
 void Vista::dibujeFondo (QGraphicsScene* m_escena){
      m_fondo = new ObjetoProp("fondo");

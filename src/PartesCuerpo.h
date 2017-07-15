@@ -30,9 +30,12 @@ class PartesCuerpo : public QObject
 
     public slots:
      void revisarEvento(bool encontrado);
+     void esconderCuerpo();
+     //void dibujarGane();
 
     signals:
      void nuevaPalabra();
+
 };
 
 #endif // PARTESCUERPO_H

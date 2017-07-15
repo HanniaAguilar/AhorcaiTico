@@ -13,7 +13,10 @@ class Diccionario : public QObject
     Q_OBJECT
   private:
     QString m_palabra;
+    QString m_palabraSinAcento;
     QVector<QString> v_palabras;
+    QVector<QString> v_palabrasSinAcento;
+    int m_caracteresEncontrados;
 
   public:
     Diccionario();
@@ -25,9 +28,13 @@ class Diccionario : public QObject
 
   signals:
     void nuevoEvento(bool encontrado);
+    void nuevoCaracterEncontrado();
+    void palabraEcontrada();
 
   public slots:
     void crearNuevaPalabra();
+    void verificarGane();
+
 
 
 };

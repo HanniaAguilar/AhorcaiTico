@@ -2,6 +2,7 @@
 #define MARCADOR_H
 
 #include <QGraphicsTextItem>
+#include <QObject>
 
 class Marcador : public QGraphicsTextItem
 {
@@ -20,13 +21,13 @@ class Marcador : public QGraphicsTextItem
     ~Marcador();
     /// metodo get de Puntos
     inline int getPuntos() { return puntos;}
-    /// incrementar puntos
-    void incrementePuntos();
+    /// actualiza puntos
+    void actualizarMarcador();
     /// resetear el marcador
     void restablecerMarcador();
 
-   protected:
-   void actualizarMarcador();
+   public slots:
+    void incrementePuntos();
 };
 
 #endif // MARCADOR_H

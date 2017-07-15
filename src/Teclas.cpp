@@ -38,7 +38,7 @@ void Teclas::agregarTeclado()
 
 #include <iostream>
 
-void Teclas::mostrarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
+void Teclas::cargarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
 {
     /// objeto temporal para cargar las teclas
     ObjetoProp* temporal;
@@ -68,7 +68,20 @@ void Teclas::mostrarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
             temporal->setZValue(1);
             escena->addItem(temporal);
             temporal->setPos(ejeX,ejeY);
+            temporal->setOpacity(0);
             v_objetosProp.append(temporal);
             std::cout<<indice<<": Element loaded("<<v_teclado[indice].toStdString()<<")"<<std::endl;
         }
+}
+
+void Teclas::mostrarTeclado()
+{
+    for(int indice=0; indice<v_objetosProp.size();++indice){
+        v_objetosProp[indice]->setOpacity(1);
+    }
+}
+
+void Teclas::restablecerTeclado()
+{
+    mostrarTeclado();
 }
