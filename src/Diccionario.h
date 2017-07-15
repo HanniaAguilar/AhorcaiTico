@@ -29,6 +29,7 @@ class Diccionario : public QObject
   signals:
     void nuevoEvento(bool encontrado);
     void nuevoCaracterEncontrado();
+    void dibujeRayas(int cantidad);
     void palabraEcontrada();
 
   public slots:

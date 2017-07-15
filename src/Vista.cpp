@@ -36,9 +36,7 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     m_escena->addItem(m_marcador);
 
     rayas= new Raya("x",Qt::black);
-    rayas->setPos(0,0);
-    m_escena->addItem(rayas);
-    rayas->mostrarRayas(m_svgRenderer,m_escena,9);
+    rayas->cargarRayas(m_svgRenderer,m_escena);
 
     cuerpo = new PartesCuerpo(m_svgRenderer, m_escena);   
     cuerpo->agregarPartes();
@@ -50,6 +48,9 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     QObject::connect(diccionario,SIGNAL(palabraEcontrada()),m_marcador,SLOT(incrementePuntos()));
     QObject::connect(diccionario,SIGNAL(palabraEcontrada()),cuerpo,SLOT(esconderCuerpo()));
     QObject::connect(diccionario,SIGNAL(palabraEcontrada()),teclas,SLOT(restablecerTeclado()));
+    QObject::connect(diccionario,SIGNAL(dibujeRayas(int)),rayas,SLOT(actualizarRayas(int)));
+    QObject::connect(cuerpo,SIGNAL(perdio()),diccionario,SLOT(crearNuevaPalabra()));
+    QObject::connect(cuerpo,SIGNAL(perdio()),teclas,SLOT(restablecerTeclado()));
     //QObject::connect(diccionario,SIGNAL(palabraEcontrada()),cuerpo,SLOT(dibujarGane()));
 
 }

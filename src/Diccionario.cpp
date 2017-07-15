@@ -48,7 +48,8 @@ bool Diccionario::seleccionarPalabrasAzar()
     size_t indiceAzar = rand() % v_palabras.size();
     m_palabra = v_palabras[indiceAzar];//definir string palabra en el .h
     m_palabraSinAcento = v_palabrasSinAcento[indiceAzar];
-    std::cout<<m_palabra.toStdString()<<std::endl;    
+    std::cout<<m_palabra.toStdString()<<std::endl;
+    emit dibujeRayas(m_palabra.length());
     return true;
 }
 

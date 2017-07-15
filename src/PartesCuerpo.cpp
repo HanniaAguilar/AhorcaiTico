@@ -43,7 +43,7 @@ void PartesCuerpo::mostrarPartes()
     if(m_ContError==7){
         quitarCuerpo();
         m_ContError=0;
-        emit nuevaPalabra();
+        emit perdio();
     }
     else{
         v_objetosPartes[m_ContError]->setOpacity(1);

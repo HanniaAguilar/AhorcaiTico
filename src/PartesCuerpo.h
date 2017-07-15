@@ -34,7 +34,7 @@ class PartesCuerpo : public QObject
      //void dibujarGane();
 
     signals:
-     void nuevaPalabra();
+     void perdio();
 
 };
 

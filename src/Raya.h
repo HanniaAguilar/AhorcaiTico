@@ -7,6 +7,7 @@
 #include <QGraphicsScene>
 #include <QPropertyAnimation>
 #include <QSvgRenderer>
+#include <QObject>
 
 class Raya  : public QGraphicsTextItem
 {
@@ -19,8 +20,13 @@ class Raya  : public QGraphicsTextItem
     Raya(QString caracter, QColor color, QGraphicsItem *parent=nullptr);
     ~Raya();
     void dibujeRayas(int cantidad);
-    void mostrarRayas(QSvgRenderer *svgRenderer, QGraphicsScene *escena, int cantidad);
+    void cargarRayas(QSvgRenderer *svgRenderer, QGraphicsScene *escena);
+    void mostrarRayas(int cantidad);
+    void ocultarRayas();
     void actualizarCaracter(QChar caracter);
+
+   public slots:
+    void actualizarRayas(int cantidad);
 
 };
 
