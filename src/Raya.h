@@ -1,7 +1,8 @@
 #ifndef RAYA_H
 #define RAYA_H
 
-#include <QGraphicsTextItem>
+#include <QGraphicsSimpleTextItem>
+//#include <QGraphicsTextItem>
 #include <QVector>
 #include "objetoprop.h"
 #include <QGraphicsScene>
@@ -9,25 +10,27 @@
 #include <QSvgRenderer>
 #include <QObject>
 
-class Raya  : public QGraphicsTextItem
+class Raya  : public QObject
 {
     Q_OBJECT
   protected:
-    QString m_caracter;
+    QGraphicsScene* m_escena;
     QVector<ObjetoProp*> v_rayas;
+    QVector<QGraphicsSimpleTextItem*>v_letras;
 
   public:
-    Raya(QString caracter, QColor color, QGraphicsItem *parent=nullptr);
+    Raya();
     ~Raya();
     void dibujeRayas(int cantidad);
     void cargarRayas(QSvgRenderer *svgRenderer, QGraphicsScene *escena);
     void mostrarRayas(int cantidad);
     void ocultarRayas();
-    void actualizarCaracter(QChar caracter);
+    void eliminarPalabra();
 
    public slots:
     void actualizarRayas(int cantidad);
-
+    void colocarPalabra(QString palabra);
+    void mostrarLetra(int pos);
 };
 
 #endif // RAYA_H

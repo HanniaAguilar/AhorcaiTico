@@ -7,7 +7,6 @@
 #include <QString>
 #include <QObject>
 
-// TODO: renombrar a Diccionario
 class Diccionario : public QObject
 {
     Q_OBJECT
@@ -29,8 +28,10 @@ class Diccionario : public QObject
   signals:
     void nuevoEvento(bool encontrado);
     void nuevoCaracterEncontrado();
+    void escribePalabra(QString palabra);
     void dibujeRayas(int cantidad);
     void palabraEcontrada();
+    void escribaLetra(int pos);
 
   public slots:
     void crearNuevaPalabra();

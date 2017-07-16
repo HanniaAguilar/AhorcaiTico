@@ -23,7 +23,6 @@ void PartesCuerpo::agregarPartes()
     v_Partes.append("pieDer");
     v_Partes.append("pieIzq");
     v_Partes.append("murio");
-    //v_Partes.append("gano");
 }
 
 void PartesCuerpo::colocarCuerpo(){
@@ -57,10 +56,6 @@ void PartesCuerpo::revisarEvento(bool encontrado)
         mostrarPartes();
     }
 }
-/*void PartesCuerpo::dibujarGane()
-{
-    v_objetosPartes[7]->setOpacity(1);
-}*/
 
 void PartesCuerpo::quitarCuerpo()
 {
@@ -90,11 +85,8 @@ void PartesCuerpo::darPos(int cont){
      temporal->setPos(267,248);
         break;
     case 6:
-     temporal->setPos(5,20);
+     temporal->setPos(370,30);
         break;
-    /*case 7:
-     temporal->setPos(0,0);
-        break;*/
     }
 }
 

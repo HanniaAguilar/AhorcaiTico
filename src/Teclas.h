@@ -32,6 +32,5 @@ class Teclas : public QObject
    public slots:
     void restablecerTeclado();
 
-
 };
 #endif // TECLAS_H

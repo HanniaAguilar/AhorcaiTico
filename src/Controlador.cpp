@@ -21,7 +21,6 @@ int Controlador::correr()
     m_vista->show();
 
     diccionario->seleccionarPalabrasAzar();
-    diccionario->lanzarPalabra();
 
     return exec();
 }
