@@ -6,6 +6,7 @@
 #include <QTextStream>
 
 Diccionario::Diccionario()
+    :m_caracteresEncontrados(0)
 {
 
 }
@@ -45,6 +46,7 @@ bool Diccionario::cargarPalabras()
 
 bool Diccionario::seleccionarPalabrasAzar()
 {
+    srand(time(NULL));
     size_t indiceAzar = rand() % v_palabras.size();
     m_palabra = v_palabras[indiceAzar];//definir string palabra en el .h
     m_palabraSinAcento = v_palabrasSinAcento[indiceAzar];
