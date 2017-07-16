@@ -68,6 +68,7 @@ bool Diccionario::buscarCaracter(QChar caracter)
     }
     /// emite evento de cambio se busca un caracter
     emit nuevoEvento(caracterEncontrado);
+    return caracterEncontrado;
 }
 
 QString Diccionario::lanzarPalabra() const
@@ -88,7 +89,7 @@ void Diccionario::crearNuevaPalabra()
 
 void Diccionario::verificarGane()
 {
-
+    std::cout<<m_caracteresEncontrados<<" gano"<<std::endl;
     if(m_caracteresEncontrados==m_palabraSinAcento.length()){
         m_caracteresEncontrados=0;
         seleccionarPalabrasAzar();
