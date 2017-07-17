@@ -6,7 +6,7 @@
 #include <QSvgRenderer>
 
 #include "Controlador.h"
-#include "Marcador.h"
+#include "marcador.h"
 #include "objetoprop.h"
 #include "PartesCuerpo.h"
 #include "Raya.h"

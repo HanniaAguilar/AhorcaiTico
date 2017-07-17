@@ -12,7 +12,7 @@
 #include <QVector>
 
 #include "Diccionario.h"
-#include "Marcador.h"
+#include "marcador.h"
 #include "Teclas.h"
 #include "Vista.h"
 

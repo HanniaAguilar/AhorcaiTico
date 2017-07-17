@@ -69,6 +69,8 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     //Si pierde, mostar teclado para el nuevo juego
     QObject::connect(cuerpo,SIGNAL(perdio()),teclas,SLOT(restablecerTeclado()));
     //QObject::connect(diccionario,SIGNAL(palabraEcontrada()),cuerpo,SLOT(dibujarGane()));
+    // si perdio se muestra la palabra
+    QObject::connect(cuerpo,SIGNAL(perdio()),rayas,SLOT(mostrarPalabra()));
 }
 
 void Vista::dibujeFondo (QGraphicsScene* m_escena){

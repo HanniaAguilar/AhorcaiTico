@@ -57,7 +57,7 @@ void Raya::colocarPalabra(QString palabra)
        eliminarPalabra();
 
    QGraphicsSimpleTextItem* letra; //Crear el objeto de texto para letras
-   int ejeX=360,ejeY=200; //Asignar posición a los caracteres en la escena
+   int ejeX=360,ejeY=180; //Asignar posición a los caracteres en la escena
    for(int i=0;i<palabra.length();++i){ //Escribir toda la palabra
        ejeX+=45; //Controlar la posición de cada una
        letra=new QGraphicsSimpleTextItem(QString(palabra[i]));
@@ -67,4 +67,12 @@ void Raya::colocarPalabra(QString palabra)
        letra->setScale(4); //Aumentar el tamaño
        v_letras.append(letra); //Agregar al vector con los objetos de cada caracter.
    }
+}
+
+void Raya::mostrarPalabra()
+{
+    for(int indice=0 ; indice<v_letras.length() ; ++indice)
+    {
+        v_letras[indice]->setOpacity(1);
+    }
 }

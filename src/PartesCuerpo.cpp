@@ -42,7 +42,7 @@ void PartesCuerpo::colocarCuerpo(){ //Colocar el cuerpo en la pantalla con opaci
 
 void PartesCuerpo::mostrarPartes()
 {
-    if(m_ContError==7){ //Si ya agotó los errores se inicia otra vez
+    if(m_ContError>=7){ //Si ya agotó los errores se inicia otra vez
         emit perdio(); //Indicar que ha perdido
         quitarCuerpo(); //Ocultar el cuerpo
         m_ContError=0; //Reiniciar contador de errores

@@ -31,6 +31,7 @@ class Raya  : public QObject
     void actualizarRayas(int cantidad); //Oculta y muestra las nueva cantidad de rayas
     void colocarPalabra(QString palabra); //Coloca la nueva palabra en la escena con opacidad 0
     void mostrarLetra(int pos); //Muestra la letra en la posición si es adivinada
+    void mostrarPalabra(); // si pierde muestra la palabra
 };
 
 #endif // RAYA_H
