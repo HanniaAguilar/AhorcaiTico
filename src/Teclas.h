@@ -1,36 +1,36 @@
 #ifndef TECLAS_H
 #define TECLAS_H
 
-#include "objetoprop.h"
 #include <QGraphicsScene>
+#include <QObject>
 #include <QPropertyAnimation>
+#include <QString>
 #include <QSvgRenderer>
 #include <QVector>
-#include <QString>
-#include <algorithm>
-#include <random>
-#include <chrono>
+
 #include "Diccionario.h"
-#include <QObject>
+#include "objetoprop.h"
+
+class ObjetoProp;
 
 class Teclas : public QObject
 {
-    Q_OBJECT
+   Q_OBJECT
+
    protected:
-    QVector<QString> v_teclado;
-    Diccionario* teclasDiccionario;///agrego para que tambien tenga un puntero a ese dicccionario
+    QVector<QString> v_teclado; //Vector con los nombres de las teclas en el svg
+    Diccionario* teclasDiccionario ; //Diccionario con las palabras
 
    public:
-    QVector<ObjetoProp*> v_objetosProp;
+    QVector<ObjetoProp*> v_objetosProp; //ObjetosProp de las teclas
 
    public:
-    Teclas(Diccionario* diccionario);
-    void agregarTeclado();
-    void cargarTeclado(QSvgRenderer* svgRenderer, QGraphicsScene *escena);
-    void mostrarTeclado();
+    Teclas(Diccionario* diccionario); //Constructor
+    void agregarTeclado(); //Agregar los id en el vector del teclado
+    void cargarTeclado(QSvgRenderer* svgRenderer, QGraphicsScene *escena); //Carga el teclado a la escena
 
    public slots:
-    void restablecerTeclado();
+    void restablecerTeclado();//Muestra el teclado completo, volver todos a opacidad 1
 
 };
 #endif // TECLAS_H

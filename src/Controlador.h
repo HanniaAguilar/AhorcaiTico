@@ -2,46 +2,36 @@
 #define CONTROLADOR_H
 
 #include <QApplication>
-#include "Vista.h"
-#include "Diccionario.h"
-#include "Teclas.h"
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QPoint>
+#include <QSequentialAnimationGroup>
+#include <QStyleFactory>
 #include <QSvgRenderer>
 #include <QtMath>
-#include <QApplication>
-#include <QGraphicsScene>
-#include <QStyleFactory>
-#include <QSequentialAnimationGroup>
-#include <QPoint>
 #include <QVector>
 
-class QGraphicsScene;
-class QSvgRenderer;
-class QGraphicsView;
-class Marcador;
+#include "Diccionario.h"
+#include "Marcador.h"
+#include "Teclas.h"
+#include "Vista.h"
+
+class Vista;
 
 class Controlador : public QApplication
 {
-    Q_OBJECT
-   protected:
-    /// administra la escena
-    QGraphicsScene* m_escena;
-    /// administra la vista
-    Vista* m_vista;
-    /// muestra el marcador
-    Marcador* marcador;
-    /// para utilizar archivos svg
-    QSvgRenderer* svgRenderer = nullptr;
-    /// mecanica del juego
-    Diccionario* diccionario;
-    /// Rayas
+   Q_OBJECT
 
-   public:
-    ///controlador
-    Controlador(int &argc, char **argv, int flags = ApplicationFlags);
-    /// destructor
-    ~Controlador();
-    /// metodo de correr el juego
-    int correr();
+   protected:
+    QGraphicsScene* m_escena;  // administra la escena
+    Vista* m_vista; // administra la vista
+    Marcador* marcador; // muestra el marcador
+    Diccionario* diccionario; // mecanica del juego
+
+   public:    
+    Controlador(int &argc, char **argv, int flags = ApplicationFlags); //constructor
+    ~Controlador(); // destructor
+    int correr(); // metodo de correr el juego
 };
 
 #endif // CONTROLADOR_H

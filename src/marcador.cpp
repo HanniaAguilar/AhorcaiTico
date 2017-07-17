@@ -1,34 +1,33 @@
 #include "marcador.h"
-#include <QColor>
-#include <QFont>
 
 Marcador::Marcador(const QString &tipoMarcador, int puntosIniciales, QColor color, QGraphicsItem* parent)
     : QGraphicsTextItem(parent)
-    , tipoMarcador(tipoMarcador)
-    , puntos(puntosIniciales)
+    , tipoMarcador(tipoMarcador) //Dice qué indica el marcador
+    , puntos(puntosIniciales)   //Puntos con lo que se inicia el juego
 {
-    setDefaultTextColor(color);
+    setDefaultTextColor(color); //Dar formato al marcador para colocarlo en escena
     setFont(QFont("", 24));
-    actualizarMarcador();
-}
-
-Marcador::~Marcador()
-{
+    actualizarMarcador(); //Colocar el marcador en los puntos iniciales
 }
 
 void Marcador::incrementePuntos()
 {
-    puntos+=10;
-    actualizarMarcador();
+    puntos+=10; //Aumentar puntaje
+    actualizarMarcador(); //Actualizar en la pantalla
 }
 
 void Marcador::actualizarMarcador()
 {
-    setPlainText( QString("%1: %2").arg(tipoMarcador).arg(puntos) );
+    setPlainText( QString("%1: %2").arg(tipoMarcador).arg(puntos) ); //Actualizar en la pantalla
 }
 
 void Marcador::restablecerMarcador()
 {
-    puntos=0;
-    actualizarMarcador();
+    puntos=0; //Iniciar el puntaje en 0
+    actualizarMarcador(); //Actualizar en la pantalla
+}
+
+Marcador::~Marcador()
+{
+
 }

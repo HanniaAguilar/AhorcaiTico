@@ -1,20 +1,23 @@
 #include "PartesCuerpo.h"
 #include "objetoprop.h"
 
-PartesCuerpo::PartesCuerpo()
+PartesCuerpo::PartesCuerpo() //Inicializar los miembros
     : m_ContError(0)
+    , m_escena(Q_NULLPTR)
+    , m_svgRenderer(Q_NULLPTR)
+    , temporal(Q_NULLPTR)
+{
+}
+
+PartesCuerpo::PartesCuerpo(QSvgRenderer *svgRenderer, QGraphicsScene *escena) //Inicializar con parametros
+    : m_ContError(0)
+    , m_escena(escena)
+    , m_svgRenderer(svgRenderer)
     , temporal(nullptr)
 {
 }
 
-PartesCuerpo::PartesCuerpo(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
-    :m_ContError(0)
-    ,m_escena(escena)
-    ,m_svgRenderer(svgRenderer)
-{
-}
-
-void PartesCuerpo::agregarPartes()
+void PartesCuerpo::agregarPartes() //Cargar los ID de las partes del cuerpo
 {
     v_Partes.append("cabeza");
     v_Partes.append("torso");
@@ -25,34 +28,34 @@ void PartesCuerpo::agregarPartes()
     v_Partes.append("murio");
 }
 
-void PartesCuerpo::colocarCuerpo(){
-    for(int indice=0;indice<v_Partes.size();++indice){
-            temporal= new ObjetoProp(v_Partes[indice]);
-            temporal->setSharedRenderer(m_svgRenderer);
+void PartesCuerpo::colocarCuerpo(){ //Colocar el cuerpo en la pantalla con opacidad 0
+    for(int indice=0;indice<v_Partes.size();++indice){ //Recibar el vector con las partes del cuerpo
+            temporal= new ObjetoProp(v_Partes[indice]); //Crear el objetoprop que corresponde
+            temporal->setSharedRenderer(m_svgRenderer); //Buscarlo en el archivo svg
             temporal->setZValue(1);
-            darPos(indice);
-            temporal->setOpacity(0);
-            m_escena->addItem(temporal);
-            v_objetosPartes.append(temporal);
+            darPos(indice); //Asignar la posición
+            temporal->setOpacity(0); //Ocultar
+            m_escena->addItem(temporal); //Agregar a la escena
+            v_objetosPartes.append(temporal); //Agregar al vector de partes
         }
 }
 
 void PartesCuerpo::mostrarPartes()
 {
-    if(m_ContError==7){
-        quitarCuerpo();
-        m_ContError=0;
-        emit perdio();
+    if(m_ContError==7){ //Si ya agotó los errores se inicia otra vez
+        emit perdio(); //Indicar que ha perdido
+        quitarCuerpo(); //Ocultar el cuerpo
+        m_ContError=0; //Reiniciar contador de errores
     }
     else{
-        v_objetosPartes[m_ContError]->setOpacity(1);
-        ++m_ContError;
+        v_objetosPartes[m_ContError]->setOpacity(1); //Asignar la parte del cuerpo que continua según los errores
+        ++m_ContError; //Aumentar número de errores
     }
 }
 
 void PartesCuerpo::revisarEvento(bool encontrado)
 {
-    if(!encontrado){        
+    if(!encontrado){ //Si la palabra presionada es incorrecta, cometió un error
         mostrarPartes();
     }
 }
@@ -60,12 +63,12 @@ void PartesCuerpo::revisarEvento(bool encontrado)
 void PartesCuerpo::quitarCuerpo()
 {
     for(int indice=0; indice<v_objetosPartes.size();++indice){
-        v_objetosPartes[indice]->setOpacity(0);
+        v_objetosPartes[indice]->setOpacity(0); //Ocultar todas las partes para iniciar de nuevo
     }
 }
 
 void PartesCuerpo::darPos(int cont){
-    switch(cont){
+    switch(cont){ //Asignar la posición correcta en la escena
     case 0:
      temporal->setPos(200,105);
         break;
@@ -90,7 +93,9 @@ void PartesCuerpo::darPos(int cont){
     }
 }
 
-void PartesCuerpo::esconderCuerpo()
+
+PartesCuerpo::~PartesCuerpo()
 {
-    quitarCuerpo();
+
 }
+

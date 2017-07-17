@@ -1,11 +1,11 @@
 #include "Teclas.h"
 
-Teclas::Teclas(Diccionario* diccionario)
+Teclas::Teclas(Diccionario* diccionario) //Inicializar miembros
     :teclasDiccionario (diccionario)
 {
 }
 
-void Teclas::agregarTeclado()
+void Teclas::agregarTeclado() //Agregar todos los ID en el svg
 {
     v_teclado.append("letraQ");
     v_teclado.append("letraw");
@@ -36,21 +36,20 @@ void Teclas::agregarTeclado()
     v_teclado.append("letraM");
 }
 
+/*Eliminar*/
 #include <iostream>
 
 void Teclas::cargarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
 {
-    /// objeto temporal para cargar las teclas
-    ObjetoProp* temporal;
+    ObjetoProp* temporal; // objeto temporal para cargar las teclas
 
-    QString alfabeto= "QWERTYUIOPASDFGHJKLNZXCVBNM";
-    /// manejar posiciones
-    int ejeX=360,ejeY=300;
+    QString alfabeto= "QWERTYUIOPASDFGHJKLNZXCVBNM";    
+    int ejeX=360,ejeY=300; // manejar posiciones
 
-    /// ciclo que recorre el vector con los ID de cada objeto
-    /// Y crea un ObjetoProp a partir de ellos.
+    // ciclo que recorre el vector con los ID de cada objeto
+    // Y crea un ObjetoProp a partir de ellos.
     for(int indice=0;indice < v_teclado.size();++indice){
-            /// controlar las posiciones de las teclas
+            // controlar las posiciones de las teclas
             if(ejeX<=800){
                 ejeX+=45;
             }else{
@@ -61,27 +60,24 @@ void Teclas::cargarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
                 ejeY+=50;
             }
 
-            /// asignando propiedades a las teclas
-            temporal= new ObjetoProp(v_teclado[indice],teclasDiccionario);//ahora recibe un diccionario
+            // asignando propiedades a las teclas
+            temporal= new ObjetoProp(v_teclado[indice],teclasDiccionario);
             temporal->setSharedRenderer(svgRenderer);
-            temporal->setChar(alfabeto[indice]);
+            temporal->setChar(alfabeto[indice]); //Asignar un char a la tecla para identificar cual presionan
             temporal->setZValue(1);
-            escena->addItem(temporal);
+            escena->addItem(temporal);//Agregar a la escena
             temporal->setPos(ejeX,ejeY);
-            temporal->setOpacity(0);
-            v_objetosProp.append(temporal);
+            temporal->setOpacity(1);
+            v_objetosProp.append(temporal); //Agregar al vector
+
+            /*Eliminar este cout */
             std::cout<<indice<<": Element loaded("<<v_teclado[indice].toStdString()<<")"<<std::endl;
         }
 }
 
-void Teclas::mostrarTeclado()
-{
-    for(int indice=0; indice<v_objetosProp.size();++indice){
-        v_objetosProp[indice]->setOpacity(1);
-    }
-}
-
 void Teclas::restablecerTeclado()
 {
-    mostrarTeclado();
+    for(int indice=0; indice<v_objetosProp.size();++indice){ //Volver a mostrar todo el teclado
+        v_objetosProp[indice]->setOpacity(1);
+    }
 }
