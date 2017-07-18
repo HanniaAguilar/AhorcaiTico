@@ -24,8 +24,7 @@ void PartesCuerpo::agregarPartes() //Cargar los ID de las partes del cuerpo
     v_Partes.append("brazoDer");
     v_Partes.append("BrazoIzq");
     v_Partes.append("pieDer");
-    v_Partes.append("pieIzq");
-    v_Partes.append("murio");
+    v_Partes.append("pieIzq");   
 }
 
 void PartesCuerpo::colocarCuerpo(){ //Colocar el cuerpo en la pantalla con opacidad 0
@@ -42,7 +41,7 @@ void PartesCuerpo::colocarCuerpo(){ //Colocar el cuerpo en la pantalla con opaci
 
 void PartesCuerpo::mostrarPartes()
 {
-    if(m_ContError>=7){ //Si ya agotó los errores se inicia otra vez
+    if(m_ContError>=6){ //Si ya agotó los errores se inicia otra vez
         emit perdio(); //Indicar que ha perdido
         quitarCuerpo(); //Ocultar el cuerpo
         m_ContError=0; //Reiniciar contador de errores
@@ -87,12 +86,8 @@ void PartesCuerpo::darPos(int cont){
     case 5:
      temporal->setPos(267,248);
         break;
-    case 6:
-     temporal->setPos(370,30);
-        break;
     }
 }
-
 
 PartesCuerpo::~PartesCuerpo()
 {

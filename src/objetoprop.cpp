@@ -24,8 +24,8 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
     if(this->elementId()=="murio"){
         this->setOpacity(0.0); //Cuando toca el de perder se inicia con una nueva palabra
     }
-    if(this->elementId()=="gano"){
-        this->setPos(-10,-10); //Cuando toca el de ganar se inicia con una nueva palabra
+    if(this->elementId()=="adivina"){
+        this->setOpacity(0.0); //Cuando toca el de ganar se inicia con una nueva palabra
     }
 }
 

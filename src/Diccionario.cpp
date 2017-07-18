@@ -78,10 +78,7 @@ void Diccionario::verificarGane()
         emit palabraEcontrada(); //Indicar que se ha ganado
         /*Eliminar este cout*/
         std::cout<<"gano"<<std::endl;
-
-        m_caracteresEncontrados=0; //Iniciar la otra palabra
-        seleccionarPalabrasAzar(); //Elegir una nueva palabra
-        emit escribePalabra(m_palabraSinAcento); //Escribir la nueva palabra
-        emit dibujeRayas(m_palabra.length()); //Dibujar la nueva cantidad de rayas
+       // m_caracteresEncontrados=0; //Iniciar la otra palabra
+       // seleccionarPalabrasAzar(); //Elegir una nueva palabra
     }
 }

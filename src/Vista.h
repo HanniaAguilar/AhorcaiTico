@@ -5,6 +5,7 @@
 #include <QGraphicsView>
 #include <QSvgRenderer>
 
+#include "Aviso.h"
 #include "Controlador.h"
 #include "marcador.h"
 #include "objetoprop.h"
@@ -12,6 +13,7 @@
 #include "Raya.h"
 #include "Teclas.h"
 
+class Aviso;
 class ObjetoProp;
 class Teclas;
 class PartesCuerpo;
@@ -26,6 +28,7 @@ class Vista:public QGraphicsView
       Marcador* m_marcador; //Guardar una instancia del marcado
       PartesCuerpo* cuerpo; //Guardar una instancia del cuerpo
       Raya* rayas; //Guardar una instancia de las rayas
+      Aviso* aviso;
 
     public:
         Vista(QGraphicsScene* escena); //Constructor

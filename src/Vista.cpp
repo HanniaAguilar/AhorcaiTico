@@ -1,8 +1,9 @@
-#include "Vista.h"
 #include "Raya.h"
+#include "Vista.h"
 
 class ObjectoProp;
 class PartesCuerpo;
+class Aviso;
 
 Vista::Vista(QGraphicsScene *escena) //Inicializar componentes
     :QGraphicsView(escena)
@@ -12,6 +13,7 @@ Vista::Vista(QGraphicsScene *escena) //Inicializar componentes
     ,m_marcador(Q_NULLPTR)
     ,cuerpo(Q_NULLPTR)
     ,rayas(Q_NULLPTR)
+    ,aviso(Q_NULLPTR)
 {
   #if ! defined(Q_OS_ANDROID)
     resize(960, 540); //Redimensionar la vista
@@ -47,6 +49,9 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     cuerpo->agregarPartes(); //Se cargan las partes del svg
     cuerpo->colocarCuerpo(); //Se colocan en la escena con opacidad 0
 
+    aviso=new Aviso(m_svgRenderer, m_escena);
+    aviso->colocarObjetos();
+
     // se conectan eventos de ambas clases
     //Revisar si la palabra presionada es correcta
     QObject::connect(diccionario,SIGNAL(clickLetra(bool)),cuerpo,SLOT(revisarEvento(bool)));
@@ -55,6 +60,7 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     //Si se encuentra una nueva palabra, aumentar puntaje
     QObject::connect(diccionario,SIGNAL(palabraEcontrada()),m_marcador,SLOT(incrementePuntos()));
     //Si encuentra la palabra, borrar el cuerpo para reinicar
+    QObject::connect(diccionario,SIGNAL(palabraEcontrada()),aviso,SLOT(mostrarGane()));
     QObject::connect(diccionario,SIGNAL(palabraEcontrada()),cuerpo,SLOT( quitarCuerpo()));
     //Si encuentra la palabra, colocar todo el teclado para reiniciar
     QObject::connect(diccionario,SIGNAL(palabraEcontrada()),teclas,SLOT(restablecerTeclado()));
@@ -71,6 +77,7 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     //QObject::connect(diccionario,SIGNAL(palabraEcontrada()),cuerpo,SLOT(dibujarGane()));
     // si perdio se muestra la palabra
     QObject::connect(cuerpo,SIGNAL(perdio()),rayas,SLOT(mostrarPalabra()));
+    QObject::connect(cuerpo,SIGNAL(perdio()),aviso,SLOT(mostrarPierde()));
 }
 
 void Vista::dibujeFondo (QGraphicsScene* m_escena){

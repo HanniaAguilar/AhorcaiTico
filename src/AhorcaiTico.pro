@@ -12,7 +12,8 @@ HEADERS += \
     Vista.h \
     PartesCuerpo.h \
     Diccionario.h \
-    Raya.h
+    Raya.h \
+    Aviso.h
 
 SOURCES += main.cpp \
     marcador.cpp \
@@ -22,7 +23,8 @@ SOURCES += main.cpp \
     PartesCuerpo.cpp \
     Diccionario.cpp \
     Objetoprop.cpp \
-    Raya.cpp
+    Raya.cpp \
+    Aviso.cpp
 
 mac {
         Resources.files = Resources
