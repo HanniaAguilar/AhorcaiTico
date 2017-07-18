@@ -57,27 +57,23 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     QObject::connect(diccionario,SIGNAL(clickLetra(bool)),cuerpo,SLOT(revisarEvento(bool)));
     //Verificar si ha encontrado todas las letras de la palabra
     QObject::connect(diccionario,SIGNAL(nuevoCaracterEncontrado()),diccionario,SLOT(verificarGane()));
-    //Si se encuentra una nueva palabra, aumentar puntaje
-    QObject::connect(diccionario,SIGNAL(palabraEcontrada()),m_marcador,SLOT(incrementePuntos()));
-    //Si encuentra la palabra, borrar el cuerpo para reinicar
-    QObject::connect(diccionario,SIGNAL(palabraEcontrada()),aviso,SLOT(mostrarGane()));
-    QObject::connect(diccionario,SIGNAL(palabraEcontrada()),cuerpo,SLOT( quitarCuerpo()));
-    //Si encuentra la palabra, colocar todo el teclado para reiniciar
-    QObject::connect(diccionario,SIGNAL(palabraEcontrada()),teclas,SLOT(restablecerTeclado()));
+    //Mostrar la letra descubierta
+    QObject::connect(diccionario,SIGNAL(escribaLetra(int)),rayas,SLOT(mostrarLetra(int)));
     //Si se encuentra la palabra, colocar otra nueva palabra
     QObject::connect(diccionario,SIGNAL(escribePalabra(QString)),rayas,SLOT(colocarPalabra(QString)));
-    //Escribir la letra en la escena si ha sido acertada
-    QObject::connect(diccionario,SIGNAL(escribaLetra(int)),rayas,SLOT(mostrarLetra(int)));
-    //Dibujar las rayas para la nueva palabra
+    //Indicar el gane
+    QObject::connect(diccionario,SIGNAL(palabraEcontrada()),m_marcador,SLOT(incrementePuntos()));
+    QObject::connect(diccionario,SIGNAL(palabraEcontrada()),aviso,SLOT(mostrarGane()));
+    //Si gana, reinicia de nuebo si lo desea
+    QObject::connect(diccionario,SIGNAL(reiniciarJuego()),cuerpo,SLOT( quitarCuerpo()));
+    QObject::connect(diccionario,SIGNAL(reiniciarJuego()),teclas,SLOT(restablecerTeclado()));
     QObject::connect(diccionario,SIGNAL(dibujeRayas(int)),rayas,SLOT(actualizarRayas(int)));
-    //Si pierde, iniciar un nuevo juego
+    //Si pierde, reinicia de nuebo si lo desea
     QObject::connect(cuerpo,SIGNAL(perdio()),diccionario,SLOT(seleccionarPalabrasAzar()));
-    //Si pierde, mostar teclado para el nuevo juego
-    QObject::connect(cuerpo,SIGNAL(perdio()),teclas,SLOT(restablecerTeclado()));
-    //QObject::connect(diccionario,SIGNAL(palabraEcontrada()),cuerpo,SLOT(dibujarGane()));
-    // si perdio se muestra la palabra
+    QObject::connect(cuerpo,SIGNAL(perdio()),diccionario,SLOT(bloquearTeclado()));
     QObject::connect(cuerpo,SIGNAL(perdio()),rayas,SLOT(mostrarPalabra()));
     QObject::connect(cuerpo,SIGNAL(perdio()),aviso,SLOT(mostrarPierde()));
+    QObject::connect(cuerpo,SIGNAL(perdio()),teclas,SLOT(restablecerTeclado()));
 }
 
 void Vista::dibujeFondo (QGraphicsScene* m_escena){

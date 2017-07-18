@@ -4,6 +4,7 @@ Diccionario::Diccionario() //Inicializar los miembros
     :m_caracteresEncontrados(0)
     ,m_palabra("")
     ,m_palabraSinAcento("")
+    ,reaccione(true)
 {
 }
 
@@ -80,6 +81,10 @@ void Diccionario::verificarGane()
         std::cout<<"gano"<<std::endl;
         m_caracteresEncontrados=0; //Iniciar la otra palabra
         //seleccionarPalabrasAzar(); //Elegir una nueva palabra
+        reaccione=false;
     }
 }
 
+ void Diccionario::bloquearTeclado(){
+     reaccione=false;
+ }

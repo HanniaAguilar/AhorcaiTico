@@ -21,9 +21,10 @@ class Diccionario : public QObject
     QString m_palabraSinAcento; //Palabra sin acentos para adivinar
     QVector<QString> v_palabras; //Vector con todas las palabras del diccionario
     QVector<QString> v_palabrasSinAcento; //Vector con todas las palabras sin acentos
-    int m_caracteresEncontrados; //Número de carácteres adivinados en la palabra actual
+    int m_caracteresEncontrados; //Número de carácteres adivinados en la palabra actual   
 
   public:
+    bool reaccione;
     Diccionario(); //Constructor
     bool cargarPalabras(); //Llenar el vector con las palabras del diccionario
     bool buscarCaracter(QChar caracter); //Buscar un caracter en la palabra a adivinar
@@ -35,8 +36,10 @@ class Diccionario : public QObject
     void dibujeRayas(int cantidad); //Reporta que se debe dibujar la cantidad de rayas segun la palabra
     void palabraEcontrada(); //Reporta que se ha adivinado una palabra
     void escribaLetra(int pos); //Indica que se debe escribir la letra adivina, recibe un parametro que indica la posicion
+    void reiniciarJuego();
 
-  public slots:    
+  public slots:
+    void bloquearTeclado();
     void seleccionarPalabrasAzar(); //Escoge una palabra al azar
     void verificarGane(); //Verificar si la cantidad de caracteres adivinas corresponde al largo de la palabra
 };

@@ -16,7 +16,7 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
     if(this->elementId()!="fondo"&&this->elementId()!="cabeza"&&this->elementId()!="torso"
             &&this->elementId()!="brazoDer"&&this->elementId()!="BrazoIzq"&&this->elementId()!="pieIzq"
             &&this->elementId()!="pieDer"&&this->elementId()!="murio"&&this->elementId()!="gano"
-            &&this->elementId()!="renglon")
+            &&this->elementId()!="renglon"&&this->diccionario->reaccione==true)
     {
         this->setOpacity(0.0); //Desaparecen
         this->diccionario->buscarCaracter(this->getChar()); //Se busca esa letra en la palabra a adivinar
@@ -25,10 +25,13 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
     if(this->elementId()=="murio"){
         this->setOpacity(0.0); //Cuando toca el de perder se inicia con una nueva palabra
         this->diccionario->seleccionarPalabrasAzar();
+        this->diccionario->reaccione=true;
     }
     if(this->elementId()=="gano"){
         this->setOpacity(0.0); //Cuando toca el de ganar se inicia con una nueva palabra
         this->diccionario->seleccionarPalabrasAzar();
+        this->diccionario->reaccione=true;
+        emit this->diccionario->reiniciarJuego();
     }
 }
 

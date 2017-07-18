@@ -9,7 +9,7 @@
 class ObjetoProp: public QGraphicsSvgItem
 {
     private:     
-     QChar m_caracter; //Char asignados a cada letra
+     QChar m_caracter; //Char asignados a cada letra     
      Diccionario* diccionario; //Diccionario del juego
 
     public:
