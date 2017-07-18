@@ -64,6 +64,7 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     //Indicar el gane
     QObject::connect(diccionario,SIGNAL(palabraEcontrada()),m_marcador,SLOT(incrementePuntos()));
     QObject::connect(diccionario,SIGNAL(palabraEcontrada()),aviso,SLOT(mostrarGane()));
+    QObject::connect(diccionario,SIGNAL(palabraEcontrada()),cuerpo,SLOT(quitarCuerpo()));
 
     //Si gana, reinicia de nuevo si lo desea
     QObject::connect(diccionario,SIGNAL(reiniciarJuego()),cuerpo,SLOT(quitarCuerpo()));
