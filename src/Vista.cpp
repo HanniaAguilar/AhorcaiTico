@@ -49,7 +49,7 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     cuerpo->agregarPartes(); //Se cargan las partes del svg
     cuerpo->colocarCuerpo(); //Se colocan en la escena con opacidad 0
 
-    aviso=new Aviso(m_svgRenderer, m_escena);
+    aviso=new Aviso(m_svgRenderer, m_escena,diccionario);
     aviso->colocarObjetos();
 
     // se conectan eventos de ambas clases

@@ -1,21 +1,22 @@
 #include "Aviso.h"
 
-Aviso:: Aviso(QSvgRenderer* svgRenderer, QGraphicsScene *escena) //Inicializar los miembros
+Aviso:: Aviso(QSvgRenderer* svgRenderer, QGraphicsScene *escena, Diccionario* diccionario) //Inicializar los miembros
     :m_svgRenderer(svgRenderer)
-    ,m_escena(escena)
+    ,m_escena(escena)\
+    ,m_diccionario(diccionario)
 {
 }
 
 void Aviso::colocarObjetos()
 {
-    pierde= new ObjetoProp("murio"); //Crear el objetoprop que corresponde
+    pierde= new ObjetoProp("murio", m_diccionario); //Crear el objetoprop que corresponde
     pierde->setSharedRenderer(m_svgRenderer); //Buscarlo en el archivo svg
     pierde->setZValue(1);
     pierde->setPos(370,30); //Asignar la posición
     pierde->setOpacity(0); //Ocultar
     m_escena->addItem(pierde); //Agregar a la escena
 
-    gane= new ObjetoProp("gano"); //Crear el objetoprop que corresponde
+    gane= new ObjetoProp("gano",m_diccionario); //Crear el objetoprop que corresponde
     gane->setSharedRenderer(m_svgRenderer); //Buscarlo en el archivo svg
     gane->setZValue(1);
     gane->setPos(370,10); //Asignar la posición

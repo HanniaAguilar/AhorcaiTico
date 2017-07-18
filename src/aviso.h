@@ -18,11 +18,12 @@ class Aviso : public QObject
     QGraphicsScene* m_escena; //Guardar la escena en que se muestran
     ObjetoProp* gane; //Objeto prop para crear el gane
     ObjetoProp* pierde; //Objeto prop para crear el pierde
+    Diccionario* m_diccionario;
 
    protected:
 
    public:
-     Aviso(QSvgRenderer* svgRenderer, QGraphicsScene *escena);  //Constructor que indica el svg y la escena
+     Aviso(QSvgRenderer* svgRenderer, QGraphicsScene *escena, Diccionario* diccionario);  //Constructor que indica el svg y la escena
      ~Aviso(); //Destructor
      void colocarObjetos(); //Crear y colocar objetos de pierde y gane con svg
 

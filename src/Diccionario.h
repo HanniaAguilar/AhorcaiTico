@@ -36,7 +36,7 @@ class Diccionario : public QObject
     void palabraEcontrada(); //Reporta que se ha adivinado una palabra
     void escribaLetra(int pos); //Indica que se debe escribir la letra adivina, recibe un parametro que indica la posicion
 
-  public slots:
+  public slots:    
     void seleccionarPalabrasAzar(); //Escoge una palabra al azar
     void verificarGane(); //Verificar si la cantidad de caracteres adivinas corresponde al largo de la palabra
 };
