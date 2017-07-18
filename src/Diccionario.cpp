@@ -80,7 +80,6 @@ void Diccionario::verificarGane()
         /*Eliminar este cout*/
         std::cout<<"gano"<<std::endl;
         m_caracteresEncontrados=0; //Iniciar la otra palabra
-        //seleccionarPalabrasAzar(); //Elegir una nueva palabra
         reaccione=false;
     }
 }

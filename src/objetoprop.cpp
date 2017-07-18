@@ -26,6 +26,7 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
         this->setOpacity(0.0); //Cuando toca el de perder se inicia con una nueva palabra
         this->diccionario->seleccionarPalabrasAzar();
         this->diccionario->reaccione=true;
+        emit this->diccionario->reiniciarJuego();
     }
     if(this->elementId()=="gano"){
         this->setOpacity(0.0); //Cuando toca el de ganar se inicia con una nueva palabra
