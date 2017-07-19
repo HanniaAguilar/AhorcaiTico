@@ -21,7 +21,6 @@ class Aviso : public QObject
     ObjetoProp* pierde; //Objeto prop para crear el pierde
     Diccionario* m_diccionario;
 
-   protected:
 
    public:
      Aviso(QSvgRenderer* svgRenderer, QGraphicsScene *escena, Diccionario* diccionario);  //Constructor que indica el svg y la escena

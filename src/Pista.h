@@ -19,23 +19,18 @@ class Pista : public QObject
     QSvgRenderer* m_renderer;
     QGraphicsScene* m_escena;
     ObjetoProp* o_pista;
-    Diccionario* diccionario;
-    int m_contadorError;
+    Diccionario* m_diccionario;
 
    public:
-    Pista(QSvgRenderer *svgRenderer, QGraphicsScene *escena, Diccionario *diccionario);
+    Pista(QSvgRenderer *svgRenderer, QGraphicsScene *escena, Diccionario *m_diccionario);
     ~Pista();
     void cargar();
-    void mostrar();
 
 
    signals:
-    void mostrarAyuda();
 
    public slots:
-    /*void puedeTocar();
-    void aumenteContError(bool encontrada);*/
-    void ocultarPista();
+    void ocultarPista();//oculta la pista
     void mostrarPista();
 };
 

@@ -86,7 +86,7 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     QObject::connect(cuerpo,SIGNAL(perdio()),pista,SLOT(ocultarPista()));
     QObject::connect(diccionario,SIGNAL(palabraEcontrada()),pista,SLOT(ocultarPista()));
     QObject::connect(diccionario,SIGNAL(reiniciarJuego()),pista,SLOT(mostrarPista()));
-    //QObject::connect(diccionario,SIGNAL(quiteVidas()),cuerpo,SLOT(quitarVidas()));
+    QObject::connect(diccionario,SIGNAL(quiteVidas()),cuerpo,SLOT(quitarVidas()));
 }
 
 void Vista::dibujeFondo (QGraphicsScene* m_escena){

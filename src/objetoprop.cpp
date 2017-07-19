@@ -37,7 +37,7 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
     if(this->elementId()=="Ayuda"){
         this->setOpacity(0.0); //Cuando toca el de ganar se inicia con una nueva palabra
         //this->diccionario->reaccione=true;
-        //emit this->diccionario->quiteVidas();
+        emit this->diccionario->quiteVidas();
         /*Aun no funciona arreglar*/
     }
 }

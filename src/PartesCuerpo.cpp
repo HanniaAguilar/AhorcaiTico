@@ -97,7 +97,7 @@ PartesCuerpo::~PartesCuerpo()
 void PartesCuerpo::quitarVidas()
 {
     std::cout<<m_ContError<<std::endl;
-    m_ContError+=2;
+    mostrarPartes();
     mostrarPartes();
     std::cout<<m_ContError<<std::endl;
 }
