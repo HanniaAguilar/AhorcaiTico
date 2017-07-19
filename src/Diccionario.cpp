@@ -51,6 +51,7 @@ void Diccionario::seleccionarPalabrasAzar()
     std::cout<<m_palabra.toStdString()<<std::endl;
     emit escribePalabra(m_palabraSinAcento);//Indicar que se debe escribir una palabra nueva
     emit dibujeRayas(m_palabra.length()); //Dibujar las rayas correspondientes en la escena
+    m_caracteresEncontrados=0;
 }
 
 bool Diccionario::buscarCaracter(QChar caracter)

@@ -63,6 +63,7 @@ void PartesCuerpo::quitarCuerpo()
     for(int indice=0; indice<v_objetosPartes.size();++indice){
         v_objetosPartes[indice]->setOpacity(0); //Ocultar todas las partes para iniciar de nuevo
     }
+    m_ContError=0;
 }
 
 void PartesCuerpo::darPos(int cont){
