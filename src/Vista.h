@@ -12,12 +12,14 @@
 #include "PartesCuerpo.h"
 #include "Raya.h"
 #include "Teclas.h"
+#include "Pista.h"
 
 class Aviso;
 class ObjetoProp;
 class Teclas;
 class PartesCuerpo;
 class Raya;
+class Pista;
 
 class Vista:public QGraphicsView
 {
@@ -28,7 +30,9 @@ class Vista:public QGraphicsView
       Marcador* m_marcador; //Guardar una instancia del marcado
       PartesCuerpo* cuerpo; //Guardar una instancia del cuerpo
       Raya* rayas; //Guardar una instancia de las rayas
-      Aviso* aviso;
+      Aviso* aviso;// Puntero de aviso
+      Pista* pista;//puntero de pista
+
 
     public:
         Vista(QGraphicsScene* escena); //Constructor

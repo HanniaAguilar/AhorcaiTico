@@ -52,6 +52,10 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     aviso=new Aviso(m_svgRenderer, m_escena,diccionario);
     aviso->colocarObjetos();
 
+    pista=new Pista(m_svgRenderer, m_escena,diccionario);
+    pista->cargar();
+    pista->mostrarPista();
+
     // se conectan eventos de ambas clases
     //Revisar si la palabra presionada es correcta
     QObject::connect(diccionario,SIGNAL(clickLetra(bool)),cuerpo,SLOT(revisarEvento(bool)));
@@ -76,6 +80,13 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     QObject::connect(cuerpo,SIGNAL(perdio()),rayas,SLOT(mostrarPalabra()));
     QObject::connect(cuerpo,SIGNAL(perdio()),aviso,SLOT(mostrarPierde()));
     QObject::connect(cuerpo,SIGNAL(perdio()),teclas,SLOT(restablecerTeclado()));
+
+    //conexiones para mostrar la pista
+    QObject::connect(diccionario,SIGNAL(clickLetra(bool)),pista,SLOT(aumenteContError(bool)));
+    QObject::connect(cuerpo,SIGNAL(perdio()),pista,SLOT(ocultarPista()));
+    QObject::connect(diccionario,SIGNAL(palabraEcontrada()),pista,SLOT(ocultarPista()));
+    QObject::connect(diccionario,SIGNAL(reiniciarJuego()),pista,SLOT(mostrarPista()));
+    //QObject::connect(diccionario,SIGNAL(quiteVidas()),cuerpo,SLOT(quitarVidas()));
 }
 
 void Vista::dibujeFondo (QGraphicsScene* m_escena){

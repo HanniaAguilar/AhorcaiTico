@@ -1,9 +1,9 @@
 #include "objetoprop.h"
 
-ObjetoProp::ObjetoProp(QString nombre,Diccionario* dic)
+ObjetoProp::ObjetoProp(QString m_nombre,Diccionario* dic)
     :diccionario(dic)
 {
-    setElementId(nombre); //Asignar el ID del elemento
+    setElementId(m_nombre); //Asignar el ID del elemento
 }
 
 #include <iostream>
@@ -16,7 +16,7 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
     if(this->elementId()!="fondo"&&this->elementId()!="cabeza"&&this->elementId()!="torso"
             &&this->elementId()!="brazoDer"&&this->elementId()!="BrazoIzq"&&this->elementId()!="pieIzq"
             &&this->elementId()!="pieDer"&&this->elementId()!="murio"&&this->elementId()!="gano"
-            &&this->elementId()!="renglon"&&this->diccionario->reaccione==true)
+            &&this->elementId()!="renglon"&&this->elementId()!="Ayuda"&&this->diccionario->reaccione==true)
     {
         this->setOpacity(0.0); //Desaparecen
         this->diccionario->buscarCaracter(this->getChar()); //Se busca esa letra en la palabra a adivinar
@@ -33,6 +33,12 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
         this->diccionario->seleccionarPalabrasAzar();
         this->diccionario->reaccione=true;
         emit this->diccionario->reiniciarJuego();
+    }
+    if(this->elementId()=="Ayuda"){
+        this->setOpacity(0.0); //Cuando toca el de ganar se inicia con una nueva palabra
+        //this->diccionario->reaccione=true;
+        //emit this->diccionario->quiteVidas();
+        /*Aun no funciona arreglar*/
     }
 }
 

@@ -88,3 +88,11 @@ void Diccionario::verificarGane()
  void Diccionario::bloquearTeclado(){
      reaccione=false;
  }
+
+
+
+ /*void Diccionario::mostrarAyuda()
+ {
+     std::cout<<"mostrando Ayuda"<<std::endl;
+     emit quiteVidas();
+ }*/

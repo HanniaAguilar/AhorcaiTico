@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QSvgRenderer>
 
+#include "Diccionario.h"
 #include "objetoprop.h"
 
 class ObjetoProp;
@@ -13,7 +14,7 @@ class Aviso : public QObject
 {
     Q_OBJECT
 
-    protected:
+   protected:
     QSvgRenderer* m_svgRenderer; //Documento con los svg
     QGraphicsScene* m_escena; //Guardar la escena en que se muestran
     ObjetoProp* gane; //Objeto prop para crear el gane

@@ -13,7 +13,8 @@ HEADERS += \
     PartesCuerpo.h \
     Diccionario.h \
     Raya.h \
-    Aviso.h
+    Aviso.h \
+    Pista.h
 
 SOURCES += main.cpp \
     marcador.cpp \
@@ -24,7 +25,8 @@ SOURCES += main.cpp \
     Diccionario.cpp \
     Objetoprop.cpp \
     Raya.cpp \
-    Aviso.cpp
+    Aviso.cpp \
+    Pista.cpp
 
 mac {
         Resources.files = Resources

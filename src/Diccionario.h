@@ -29,6 +29,7 @@ class Diccionario : public QObject
     bool cargarPalabras(); //Llenar el vector con las palabras del diccionario
     bool buscarCaracter(QChar caracter); //Buscar un caracter en la palabra a adivinar
 
+
   signals:
     void clickLetra(bool encontrado); //Reporta un click en alguna letra
     void nuevoCaracterEncontrado(); //Reporta que se ha adivinado un caracter en la palabra
@@ -37,11 +38,13 @@ class Diccionario : public QObject
     void palabraEcontrada(); //Reporta que se ha adivinado una palabra
     void escribaLetra(int pos); //Indica que se debe escribir la letra adivina, recibe un parametro que indica la posicion
     void reiniciarJuego();
+    void quiteVidas();
 
   public slots:
     void bloquearTeclado();
     void seleccionarPalabrasAzar(); //Escoge una palabra al azar
     void verificarGane(); //Verificar si la cantidad de caracteres adivinas corresponde al largo de la palabra
+    //void mostrarAyuda();
 };
 
 #endif // DICCIONARIO_H
