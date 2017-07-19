@@ -82,7 +82,7 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     QObject::connect(cuerpo,SIGNAL(perdio()),teclas,SLOT(restablecerTeclado()));
 
     //conexiones para mostrar la pista
-    QObject::connect(diccionario,SIGNAL(clickLetra(bool)),pista,SLOT(aumenteContError(bool)));
+    //QObject::connect(diccionario,SIGNAL(clickLetra(bool)),pista,SLOT(aumenteContError(bool)));
     QObject::connect(cuerpo,SIGNAL(perdio()),pista,SLOT(ocultarPista()));
     QObject::connect(diccionario,SIGNAL(palabraEcontrada()),pista,SLOT(ocultarPista()));
     QObject::connect(diccionario,SIGNAL(reiniciarJuego()),pista,SLOT(mostrarPista()));

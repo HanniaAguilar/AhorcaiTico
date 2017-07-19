@@ -37,7 +37,7 @@ void Pista::ocultarPista()
 }
 
 // se verifica que aun tenga vidas para poder solicitar la pista
-void Pista::puedeTocar()
+/*void Pista::puedeTocar()
 {
     if(m_contadorError>=6)
         ocultarPista();
@@ -53,4 +53,4 @@ void Pista::aumenteContError(bool encontrada)
     }
 
     puedeTocar();
-}
+}*/

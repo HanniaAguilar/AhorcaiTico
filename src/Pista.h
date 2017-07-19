@@ -33,8 +33,8 @@ class Pista : public QObject
     void mostrarAyuda();
 
    public slots:
-    void puedeTocar();
-    void aumenteContError(bool encontrada);
+    /*void puedeTocar();
+    void aumenteContError(bool encontrada);*/
     void ocultarPista();
     void mostrarPista();
 };
