@@ -17,11 +17,13 @@ class Diccionario : public QObject
   Q_OBJECT
 
   private:
+    int m_caracteresEncontrados; //Número de carácteres adivinados en la palabra actual
     QString m_palabra;  //Palabra para adivinar actualmente
     QString m_palabraSinAcento; //Palabra sin acentos para adivinar
+    QString m_definicion;
     QVector<QString> v_palabras; //Vector con todas las palabras del diccionario
-    QVector<QString> v_palabrasSinAcento; //Vector con todas las palabras sin acentos
-    int m_caracteresEncontrados; //Número de carácteres adivinados en la palabra actual   
+    QVector<QString> v_definiciones;
+    QVector<QString> v_palabrasSinAcento; //Vector con todas las palabras sin acentos      
 
   public:
     bool reaccione;

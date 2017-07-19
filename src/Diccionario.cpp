@@ -4,6 +4,7 @@ Diccionario::Diccionario() //Inicializar los miembros
     :m_caracteresEncontrados(0)
     ,m_palabra("")
     ,m_palabraSinAcento("")
+    ,m_definicion("")
     ,reaccione(true)
 {
 }
@@ -22,6 +23,24 @@ bool Diccionario::cargarPalabras()
     }
 
     diccionario.close(); //Cerrar el archivo
+
+    QFile pistas (":/Resources/Pistas.txt"); //Agregar el archivo del diccionario
+    if(!pistas.open(QIODevice::ReadOnly))
+        QMessageBox::information(0, "error", pistas.errorString()); //Reportar error si no se encuentra
+
+    QTextStream inP(&pistas);
+    while(!inP.atEnd()) //Leer el diccionario completo
+    {
+        //std::cout<<"HOOOOOOOLLLLLAAAAA"<<std::endl;
+        QString linea = inP.readLine(); //Leer las líneas
+        v_definiciones.append(linea); //Agregar la primer palabra al vecto de palabras
+    }
+
+    pistas.close(); //Cerrar el archivo
+
+    std::cout<<v_palabras.size()<<std::endl;
+
+    std::cout<<v_definiciones.size()<<std::endl;
 
     QFile diccionarioSinAcento (":/Resources/Diccionario_sin_acentos.txt");
     if(!diccionarioSinAcento.open(QIODevice::ReadOnly))
@@ -46,9 +65,11 @@ void Diccionario::seleccionarPalabrasAzar()
     srand(time(NULL)); //Cambiar la semilla de números random
     size_t indiceAzar = rand() % v_palabras.size(); //Generar un número al azar entre la cantidad de palabras
     m_palabra = v_palabras[indiceAzar]; //Leer la palabra en el número generado
+    m_definicion=v_definiciones[indiceAzar];
     m_palabraSinAcento = v_palabrasSinAcento[indiceAzar]; //Leer la palabra sin acentos en el número generado
     /*Eliminar este cout*/
     std::cout<<m_palabra.toStdString()<<std::endl;
+    std::cout<<m_definicion.toStdString()<<std::endl;
     emit escribePalabra(m_palabraSinAcento);//Indicar que se debe escribir una palabra nueva
     emit dibujeRayas(m_palabra.length()); //Dibujar las rayas correspondientes en la escena
     m_caracteresEncontrados=0;
