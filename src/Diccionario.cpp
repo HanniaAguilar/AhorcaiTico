@@ -31,7 +31,6 @@ bool Diccionario::cargarPalabras()
     QTextStream inP(&pistas);
     while(!inP.atEnd()) //Leer el diccionario completo
     {
-        //std::cout<<"HOOOOOOOLLLLLAAAAA"<<std::endl;
         QString linea = inP.readLine(); //Leer las líneas
         v_definiciones.append(linea); //Agregar la primer palabra al vecto de palabras
     }
@@ -109,8 +108,6 @@ void Diccionario::verificarGane()
  void Diccionario::bloquearTeclado(){
      reaccione=false;
  }
-
-
 
  /*void Diccionario::mostrarAyuda()
  {
