@@ -109,6 +109,16 @@ void Diccionario::verificarGane()
      reaccione=false;
  }
 
+<<<<<<< HEAD
+=======
+ QString Diccionario::getDefinicion() const
+ {
+     return m_definicion;
+ }
+
+
+
+>>>>>>> dcd115d5841f841b928ea2cfd981f50a6f52320a
  /*void Diccionario::mostrarAyuda()
  {
      std::cout<<"mostrando Ayuda"<<std::endl;
