@@ -110,6 +110,11 @@ void Diccionario::verificarGane()
      reaccione=false;
  }
 
+ QString Diccionario::getDefinicion() const
+ {
+     return m_definicion;
+ }
+
 
 
  /*void Diccionario::mostrarAyuda()

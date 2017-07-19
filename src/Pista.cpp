@@ -34,3 +34,12 @@ void Pista::ocultarPista()
     o_pista->setOpacity(0);
 }
 
+void Pista::mostrarAyuda(QString pista)
+{
+    QMessageBox* ayuda= new QMessageBox();
+    ayuda->setText(pista);
+    ayuda->setWindowTitle("Ayuda");
+    ayuda->setFixedSize(200,200);
+    ayuda->setVisible(true);
+}
+

@@ -4,6 +4,7 @@
 #include <QGraphicsScene>
 #include <QObject>
 #include <QSvgRenderer>
+#include <QMessageBox>
 
 #include "Diccionario.h"
 #include "objetoprop.h"
@@ -32,6 +33,7 @@ class Pista : public QObject
    public slots:
     void ocultarPista();//oculta la pista
     void mostrarPista();
+    void mostrarAyuda(QString pista);
 };
 
 #endif // PISTA_H
