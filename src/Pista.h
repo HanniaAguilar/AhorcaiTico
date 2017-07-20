@@ -21,6 +21,7 @@ class Pista : public QObject
     QSvgRenderer* m_renderer; //Archivo con los objetos para la escena
     QGraphicsScene* m_escena; //Escena
     ObjetoProp* o_pista; //Objeto de la pista en la escena
+    ObjetoProp* o_reglas; //Objeto de la pista en la escena
     Diccionario* m_diccionario; //Puntero a diccionario para conocer la definición (pista)
 
    public:

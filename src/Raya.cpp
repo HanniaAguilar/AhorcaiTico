@@ -8,7 +8,7 @@ Raya::Raya(Diccionario* diccionario)
 void Raya::cargarRayas(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
 {    
     m_escena = escena; //Escena en la cual se cargan las rayas
-    int ejeX=360,ejeY=250; //Posiciones de la rayas
+    int ejeX=360,ejeY=220; //Posiciones de la rayas
     ObjetoProp* temporal; // objeto temporal para cargar las teclas
     for(int indice=0;indice < 12; ++indice){ //Número de rayas a dibujar en la escena
             ejeX+=45; // controlar las posiciones de las teclas
@@ -51,7 +51,7 @@ void Raya::colocarPalabra(QString palabra)
        eliminarPalabra();
 
    QGraphicsSimpleTextItem* letra; //Crear el objeto de texto para letras
-   int ejeX=360,ejeY=180; //Asignar posición a los caracteres en la escena
+   int ejeX=360,ejeY=160; //Asignar posición a los caracteres en la escena
    for(int i=0;i<palabra.length();++i){ //Escribir toda la palabra
        ejeX+=45; //Controlar la posición de cada una
        letra=new QGraphicsSimpleTextItem(QString(palabra[i]));

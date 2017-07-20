@@ -10,12 +10,20 @@ Pista::Pista(QSvgRenderer* svgRenderer, QGraphicsScene *escena, Diccionario* dic
 
 void Pista::cargar() //Cargar la imagen
 {
-    o_pista= new ObjetoProp("pista",m_diccionario);
+    o_pista= new ObjetoProp("ayuda",m_diccionario);
     o_pista->setSharedRenderer(m_renderer);
     o_pista->setZValue(1);
     o_pista->setPos(550,35);
     o_pista->setOpacity(0); //Ocultar
     m_escena->addItem(o_pista); //Agregar a la escena
+
+
+    o_reglas= new ObjetoProp("instruccion",m_diccionario);
+    o_reglas->setSharedRenderer(m_renderer);
+    o_reglas->setZValue(1);
+    o_reglas->setPos(20,20);
+    o_reglas->setOpacity(1);
+    m_escena->addItem(o_reglas);
 }
 
 void Pista::mostrarPista() //Muestra el icono de la pista
@@ -39,21 +47,21 @@ void Pista::mostrarAyuda(QString pista) //Mostrar otra ventana con ayuda
 
 void Pista::mostrarInstrucciones() //Instrucciones del juego
 {
-    const QString instrucciones="***********************************************************************\n"
-                             "*                                                                     *\n"
-                             "*   Jugar AhorcaiTico es muy fácil, lo que tienes que hacer          *\n"
-                             "*   es adivinar una palabra secreta, que es un costarriqueñismo       *\n"
-                             "*   si no tiene idea de cuál palabra es, tiene una ayuda, sin         *\n"
-                             "*   sin embargo no es GRATIS, esto le costará dos partes del cuerpo   *\n"
-                             "*   asi que usela con inteligencia, puedes ser un heroe y salvar al   *\n"
-                             "*   muñeco, aunque puedes ser un villano y condenarlo a una horca     *\n"
-                             "*   con solo 7 errores. Ten cuidado, Suerte\n                         *\n"
-                             "*                                                                     *\n"
-                             "***********************************************************************\n";
+    const QString instrucciones="**********************************************************************\n"
+                                "Jugar AhorcaiTico es muy fácil, lo que tienes que hacer es adivinar"
+                                " una palabra secreta, que es un costarriqueñismo si no tiene idea de"
+                                " cuál palabra es, tiene una ayuda (Pista en la caja al lado del puntaje),"
+                                " sin embargo no es GRATIS, esto le costará dos partes del cuerpo asi que"
+                                " utilisela con inteligencia.\n\n"
+                                "Puedes ser un héroe y salvar al muñeco, aunque puedes ser un villano"
+                                " y condenarlo a una horca con solo 7 errores.\n\n"
+                                "Ten cuidado, Suerte.\n\n"
+                                "**********************************************************************\n";
     QMessageBox* instruccion= new QMessageBox();
-    instruccion->setText(instrucciones); //Texto que se muestrs
-    instruccion->setWindowTitle("INSTRUCCIONES"); //Título de la ventana
-    instruccion->setVisible(true); //Mostrar
+    instruccion->setText(instrucciones);
+    instruccion->setWindowTitle("INSTRUCCIONES");
+    instruccion->setMinimumSize(400,400);
+    instruccion->setVisible(true);
 }
 
 Pista::~Pista()

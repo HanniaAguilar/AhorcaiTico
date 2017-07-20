@@ -14,7 +14,8 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
     if(this->elementId()!="fondo"&&this->elementId()!="cabeza"&&this->elementId()!="torso"
             &&this->elementId()!="brazoDer"&&this->elementId()!="BrazoIzq"&&this->elementId()!="pieIzq"
             &&this->elementId()!="pieDer"&&this->elementId()!="murio"&&this->elementId()!="gano"
-            &&this->elementId()!="renglon"&&this->elementId()!="pista"&&(this->diccionario->getReaccionar())==true)
+            &&this->elementId()!="renglon"&&this->elementId()!="ayuda"&&this->elementId()!="instruccion"
+            &&(this->diccionario->getReaccionar())==true)
     {
         this->setOpacity(0.0); //Desaparecen
         this->diccionario->buscarCaracter(this->getChar()); //Se busca esa letra en la palabra a adivinar
@@ -30,9 +31,12 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
         this->diccionario->setReaccionar(true); //Bloquear el teclado
         emit this->diccionario->reiniciarJuego(); //Iniciar otra palabra
     }
-    if(this->elementId()=="pista"){
+    if(this->elementId()=="ayuda"){
         emit this->diccionario->mostrarAyuda(diccionario->getDefinicion()); //Mostrar ayuda
         emit this->diccionario->quiteVidas(); //Quitar dos vidas (Colocar dos partes del cuerpo)
+    }
+    if(this->elementId()=="instruccion"){
+        emit this->diccionario->muestreInstrucciones();        
     }
 }
 

@@ -53,7 +53,7 @@ void Aviso::mostrarDefinicion() //Mostrar la definición en escena cuando se pid
     def=new QGraphicsSimpleTextItem("Def: "+QString(this->m_diccionario->getDefinicion()));
     m_escena->addItem(def); //Agregarla a la escena
     def->setScale(1.5); //Tamaño de la letra
-    def->setPos(400,150); //Colocar posición
+    def->setPos(405,235); //Colocar posición
     palabraMostrada=true; //Ya ha sido cargada a la escena
 }
 
