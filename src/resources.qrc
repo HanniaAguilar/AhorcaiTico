@@ -2,7 +2,7 @@
     <qresource prefix="/">
         <file>Resources/Diccionario.txt</file>
         <file>Resources/Diccionario_sin_acentos.txt</file>
-        <file>Resources/assets.svg</file>
         <file>Resources/Pistas.txt</file>
+        <file>Resources/assets.svg</file>
     </qresource>
 </RCC>

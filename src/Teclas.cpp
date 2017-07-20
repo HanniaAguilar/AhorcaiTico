@@ -44,7 +44,7 @@ void Teclas::cargarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
     ObjetoProp* temporal; // objeto temporal para cargar las teclas
 
     QString alfabeto= "QWERTYUIOPASDFGHJKLÑZXCVBNM";
-    int ejeX=360,ejeY=300; // manejar posiciones
+    int ejeX=360,ejeY=295; // manejar posiciones
 
     // ciclo que recorre el vector con los ID de cada objeto
     // Y crea un ObjetoProp a partir de ellos.

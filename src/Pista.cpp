@@ -14,10 +14,10 @@ Pista::~Pista()
 //carga la imagen
 void Pista::cargar()
 {
-    o_pista= new ObjetoProp("Ayuda",m_diccionario);
+    o_pista= new ObjetoProp("pista",m_diccionario);
     o_pista->setSharedRenderer(m_renderer);
     o_pista->setZValue(1);
-    o_pista->setPos(410,20);
+    o_pista->setPos(550,35);
     o_pista->setOpacity(0);
     m_escena->addItem(o_pista);
 }
@@ -38,7 +38,7 @@ void Pista::mostrarAyuda(QString pista)
 {
     QMessageBox* ayuda= new QMessageBox();
     ayuda->setText(pista);
-    ayuda->setWindowTitle("Ayuda");
+    ayuda->setWindowTitle("PISTA");
     ayuda->setFixedSize(200,200);
     ayuda->setVisible(true);
 }

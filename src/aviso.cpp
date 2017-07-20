@@ -12,14 +12,14 @@ void Aviso::colocarObjetos()
     pierde= new ObjetoProp("murio", m_diccionario); //Crear el objetoprop que corresponde
     pierde->setSharedRenderer(m_svgRenderer); //Buscarlo en el archivo svg
     pierde->setZValue(1);
-    pierde->setPos(370,30); //Asignar la posición
+    pierde->setPos(20,40); //Asignar la posición
     pierde->setOpacity(0); //Ocultar
     m_escena->addItem(pierde); //Agregar a la escena
 
     gane= new ObjetoProp("gano",m_diccionario); //Crear el objetoprop que corresponde
     gane->setSharedRenderer(m_svgRenderer); //Buscarlo en el archivo svg
     gane->setZValue(1);
-    gane->setPos(370,10); //Asignar la posición
+    gane->setPos(20,10); //Asignar la posición
     gane->setOpacity(0); //Ocultar
     m_escena->addItem(gane); //Agregar a la escena
 }

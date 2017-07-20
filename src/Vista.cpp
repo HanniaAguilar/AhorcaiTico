@@ -39,7 +39,7 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
 
     //Se agrega el marcador
     m_marcador = new Marcador("Puntos",0,Qt::black);  //Color y título
-    m_marcador->setPos(710,20);
+    m_marcador->setPos(680,50);
     m_escena->addItem(m_marcador); //Se coloca en la escena en la posición correspondiente
 
     //Se agregan las rayas
@@ -95,7 +95,7 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
 void Vista::dibujeFondo (QGraphicsScene* m_escena){
      m_fondo = new ObjetoProp("fondo"); //Buscar fondo en el svg
      m_fondo->setSharedRenderer(m_svgRenderer);
-     m_fondo->setPos(45,5); //Asignar posición
+     m_fondo->setPos(45,35); //Asignar posición
      m_escena->addItem(m_fondo); //Agregar a la escena
      m_fondo->setZValue(-1);
 }
