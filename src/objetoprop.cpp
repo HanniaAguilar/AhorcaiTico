@@ -29,14 +29,13 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
         emit this->diccionario->reiniciarJuego();
     }
     if(this->elementId()=="gano"){
-        this->setOpacity(0.0); //Cuando toca el de ganar se inicia con una nueva palabra
+        //this->setOpacity(0.0); //Cuando toca el de ganar se inicia con una nueva palabra
         this->diccionario->seleccionarPalabrasAzar();
         this->diccionario->reaccione=true;
         emit this->diccionario->reiniciarJuego();
     }
     if(this->elementId()=="pista"){
-        this->setOpacity(0.0); //Cuando toca el de ganar se inicia con una nueva palabra
-        //this->diccionario->reaccione=true;
+        //this->setOpacity(0.0); //Cuando toca el de ganar se inicia con una nueva palabra
         emit this->diccionario->quiteVidas();
         emit this->diccionario->mostrarAyuda(diccionario->getDefinicion());
         /*Aun no funciona arreglar*/

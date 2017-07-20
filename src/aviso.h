@@ -2,6 +2,7 @@
 #define AVISO_H
 
 #include <QGraphicsScene>
+#include <QGraphicsSimpleTextItem>
 #include <QObject>
 #include <QSvgRenderer>
 
@@ -20,7 +21,8 @@ class Aviso : public QObject
     ObjetoProp* gane; //Objeto prop para crear el gane
     ObjetoProp* pierde; //Objeto prop para crear el pierde
     Diccionario* m_diccionario;
-
+    QGraphicsSimpleTextItem* def;
+    bool palabraMostrada;
 
    public:
      Aviso(QSvgRenderer* svgRenderer, QGraphicsScene *escena, Diccionario* diccionario);  //Constructor que indica el svg y la escena
@@ -33,6 +35,8 @@ class Aviso : public QObject
      void quitarObjetos(); //Colocar los objetos en opacidad 0
      void mostrarPierde(); //Mostrar objeto de pierde
      void mostrarGane(); //Mostrar objeto de gane
+     void mostrarDefinicion();
+     void cargarDefinicion();
 };
 
 #endif // AVISO_H

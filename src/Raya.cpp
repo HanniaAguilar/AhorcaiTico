@@ -1,6 +1,7 @@
 #include "Raya.h"
 
-Raya::Raya()
+Raya::Raya(Diccionario* diccionario)
+    :m_diccionario(diccionario)
 {
 }
 
@@ -43,7 +44,7 @@ void Raya::eliminarPalabra()
     for (int indice=0 ; indice < v_letras.size() ; ++indice ){ //Eliminar las letras de la palabra anterior
         v_letras[indice]->setOpacity(0);
     }
-    v_letras.clear(); //Limpiar el vector con la palabra anterior
+    v_letras.clear(); //Limpiar el vector con la palabra anterior  
 }
 
 void Raya::mostrarLetra(int pos)

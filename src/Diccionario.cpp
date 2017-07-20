@@ -3,9 +3,9 @@
 Diccionario::Diccionario() //Inicializar los miembros
     :m_caracteresEncontrados(0)
     ,m_palabra("")
-    ,m_palabraSinAcento("")
-    ,m_definicion("")
+    ,m_palabraSinAcento("")    
     ,reaccione(true)
+    ,m_definicion("")
 {
 }
 
@@ -114,9 +114,3 @@ void Diccionario::verificarGane()
  {
      return m_definicion;
  }
-
- /*void Diccionario::mostrarAyuda()
- {
-     std::cout<<"mostrando Ayuda"<<std::endl;
-     emit quiteVidas();
- }*/

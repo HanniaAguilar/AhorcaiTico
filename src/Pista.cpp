@@ -1,4 +1,5 @@
 #include "Pista.h"
+#include <iostream>
 
 Pista::Pista(QSvgRenderer* svgRenderer, QGraphicsScene *escena, Diccionario* diccionario)
     :m_renderer(svgRenderer)
@@ -31,7 +32,7 @@ void Pista::mostrarPista()
 // oculta la imagen de la pista
 void Pista::ocultarPista()
 {
-    o_pista->setOpacity(0);
+    o_pista->setOpacity(0);   
 }
 
 void Pista::mostrarAyuda(QString pista)
@@ -47,10 +48,10 @@ void Pista::mostrarInstrucciones()
 {
     const QString instrucciones="***********************************************************************\n"
                              "*                                                                     *\n"
-                             "*    Jugar AhorcaiTico es muy facil, lo que tienes que hacer          *\n"
+                             "*   Jugar AhorcaiTico es muy fácil, lo que tienes que hacer          *\n"
                              "*   es adivinar una palabra secreta, que es un costarriqueñismo       *\n"
-                             "*   si no tiene idea de cual palabra es, tiene una ayuda, sin         *\n"
-                             "*   sin embargo no es GRATIS, esto le costara dos partes del cuerpo   *\n"
+                             "*   si no tiene idea de cuál palabra es, tiene una ayuda, sin         *\n"
+                             "*   sin embargo no es GRATIS, esto le costará dos partes del cuerpo   *\n"
                              "*   asi que usela con inteligencia, puedes ser un heroe y salvar al   *\n"
                              "*   muñeco, aunque puedes ser un villano y condenarlo a una horca     *\n"
                              "*   con solo 7 errores. Ten cuidado, Suerte\n                         *\n"

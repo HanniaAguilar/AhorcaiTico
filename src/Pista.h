@@ -2,6 +2,7 @@
 #define PISTA_H
 
 #include <QGraphicsScene>
+#include <QGraphicsSimpleTextItem>
 #include <QObject>
 #include <QSvgRenderer>
 #include <QMessageBox>
@@ -20,7 +21,7 @@ class Pista : public QObject
     QSvgRenderer* m_renderer;
     QGraphicsScene* m_escena;
     ObjetoProp* o_pista;
-    Diccionario* m_diccionario;
+    Diccionario* m_diccionario;    
 
    public:
     Pista(QSvgRenderer *svgRenderer, QGraphicsScene *escena, Diccionario *m_diccionario);

@@ -10,6 +10,7 @@
 #include <QSvgRenderer>
 #include <QVector>
 
+#include "Diccionario.h"
 #include "objetoprop.h"
 
 class Raya  : public QObject
@@ -20,9 +21,10 @@ class Raya  : public QObject
     QGraphicsScene* m_escena; //Guarda la escena
     QVector<ObjetoProp*> v_rayas; //Vector con las rayas
     QVector<QGraphicsSimpleTextItem*>v_letras; //Vector con las letras de la palabra a adivinar
+    Diccionario* m_diccionario;
 
   public:
-    Raya(); //Constructor
+    Raya(Diccionario* diccionario); //Constructor
     ~Raya(); //Destructor
     void cargarRayas(QSvgRenderer *svgRenderer, QGraphicsScene *escena); //Dibuja las rayas con opacidad 0
     void eliminarPalabra(); //Elimina las letras de la palabra anterior para colocar otra nueva

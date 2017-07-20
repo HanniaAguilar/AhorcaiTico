@@ -43,7 +43,7 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     m_escena->addItem(m_marcador); //Se coloca en la escena en la posición correspondiente
 
     //Se agregan las rayas
-    rayas= new Raya();
+    rayas= new Raya(diccionario);
     rayas->cargarRayas(m_svgRenderer,m_escena);  //Cargarlas del svg y colocar en opacidad 0
 
     //Se agrega el cuerpo
@@ -75,6 +75,8 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     //Si gana, reinicia de nuevo si lo desea
     QObject::connect(diccionario,SIGNAL(reiniciarJuego()),cuerpo,SLOT(quitarCuerpo()));
     QObject::connect(diccionario,SIGNAL(reiniciarJuego()),teclas,SLOT(restablecerTeclado()));
+    QObject::connect(diccionario,SIGNAL(reiniciarJuego()),aviso,SLOT(quitarObjetos()));
+    //QObject::connect(diccionario,SIGNAL(reiniciarJuego()),aviso,SLOT(cargarDefinicion()));
     QObject::connect(diccionario,SIGNAL(dibujeRayas(int)),rayas,SLOT(actualizarRayas(int)));
 
     //Si pierde, reinicia de nuevo si lo desea
@@ -90,6 +92,7 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     QObject::connect(diccionario,SIGNAL(reiniciarJuego()),pista,SLOT(mostrarPista()));
     QObject::connect(diccionario,SIGNAL(quiteVidas()),cuerpo,SLOT(quitarVidas()));
     QObject::connect(diccionario,SIGNAL(mostrarAyuda(QString)),pista,SLOT(mostrarAyuda(QString)));
+    QObject::connect(diccionario,SIGNAL(mostrarAyuda(QString)),aviso,SLOT(mostrarDefinicion()));
 
     //conexion de la instruccion
     QObject::connect(diccionario,SIGNAL(muestreInstrucciones()),pista,SLOT(mostrarInstrucciones()));
