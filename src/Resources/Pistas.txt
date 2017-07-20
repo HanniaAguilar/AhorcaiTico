@@ -35,7 +35,7 @@ Regañada.
 Zapato viejo, usado.
 Ataúd. 
 Tubérculo parecido a la papa o que se enoja fácil.
-Grupo de amigos de un barrio o similar, en su mayoría "ratas de caño".
+Grupo de amigos de un barrio, en su mayoría "ratas de caño".
 Estribillo, repetición fastidiosa.
 Colones (moneda costarricense).
 Cosas o hechos.
@@ -48,7 +48,7 @@ Ropa que se lleva puesta.
 Momento.
 Pereza, sitio o campo. 
 Adiós, hasta luego.
-Persona poco ingeniosa o con falta de agilidad para hacer las cosas.
+Persona poco ingeniosa o con falta de agilidad.
 Ladrón joven, niño ratero. 
 Muchacho, niño.
 Camisa.
@@ -65,8 +65,8 @@ Niño.
 Cosa divertida.
 Cárcel.
 Expresión entre los jóvenes que denota agrado o enojado.
-Trinquetero, comerciante ilegal, a veces estafador. 
-Casa, hogar. Vamos a mi choza, mi tata tiene muy buenos cognacs.
+Comerciante ilegal, a veces estafador. 
+Casa, hogar. 
 Cosa, objeto. 
 Montón de cosas.
 El que guia, o lleva la palabra. 
@@ -80,11 +80,11 @@ Visitar a la novia.
 Gracioso, bonito.
 Ajustar.
 Mujer muy bella y guapa. 
-Expresión para pedirle a alguien que avance o que le pegue a alguien.
+Pedirle a alguien que avance o que le pegue a alguien.
 Arruinar, averiar, tener un accidente.
 Desorden.
 Suerte.
-Acción de mirar detenidamente, observar con atención o malicia.
+Mirar detenidamente, observar con atención o malicia.
 Doler.
 Problemático, difícil. 
 Molestar.
@@ -101,16 +101,15 @@ Sin oportunidad.
 Algo no muy bueno, se puede decir que sinonimo de güeiso.
 Difícil, weiso.
 Persona lista, inteligente.
-Porción pequeña de comida envuelta en una tortilla, y por extensión cualquier poco de comida. 
+Porción pequeña de comida envuelta en una tortilla. 
 Palo grande o puro de marihuana.
 Persona de ojos verdes o azules. 
 Malestar posterior a una excesiva ingesta de bebidas alcohólicas.
-Guardia. Generalmente, el que cuida los carros en la calle.
+Guardia. El que cuida los carros en la calle.
 El reloj.
 Golpe fuerte, leñazo.
-Licor hecho de la caña de azúcar (bebida nacional de Costa Rica). Cualquier bebida alcohólica, licor.
-Suerte.
-Algo feo, malo. 
+Licor hecho de la caña de azúcar (bebida nacional).
+Suerte. 
 Hombre homosexual.
 Niño/niña pequeño/a.
 Dinero, plata.
@@ -130,12 +129,12 @@ Resolver problemas propios; correr un riesgo.
 Está borracho.
 La cabeza.
 Cabezón o persona muy terca ("cerrada"). 
-Conquista amorosa sin compromisos, generalmente poco oficial, ilícita. 
+Conquista amorosa sin compromisos. 
 Sin dinero.
 Suertudo.
 Golpe muy fuerte.
-De la provincia de Alajuela o seguidor de la Liga Deportiva Alajuelense.
-"darle pelota a alguien", "pulsearla", obtener la compañía de alguien con fines románticos/emocionales.
+De la provincia de Alajuela o seguidor del equipo de fútbol. 
+Cbtener la compañía romántica de alguien.
 Sin dinero.
 Pobreza, miseria. 
 Persona de piel y cabello claros.
@@ -167,15 +166,15 @@ Huérfano.
 La bicicleta.
 Crema de leche agria.
 Carro, coche.
-Que estudia mucho o es muy inteligente (del inglés "nerd"). 
+Que estudia mucho o es muy inteligente("nerd"). 
 Estilo propio, vibra u onda. 
 Acción de pegar, golpe fuerte.
 Policía.
 Fiesta, celebración. 
 Situación cómica, vacilón.
-Jóven vago, que no estudia, es grosero, maleducado y vulgar. 
+Jóven vago, que no estudia, es grosero y vulgar. 
 Trivialidades.
-Valimiento, interceción poderosa o influencia que se emplea para conseguir algo. 
+Interseción poderosa o influencia para conseguir algo. 
 Morirse.
 La vagina.
 Infracción, multa.
@@ -183,9 +182,9 @@ Hediondo, mal olor.
 Humillante, hacer algo mal, que algo salió mal.
 Sin dinero.
 Cortarse el cabello. 
-Un cualquiera, persona sin educación ni profesión, inútil.
-Del trabajo esforzado, persona que lucha por ganar dinero. Sinónimo: pulsearla.
-Tonto o poco hábil para hacer ciertas cosas. Miedoso.
+Un cualquiera, persona sin educación ni profesión.
+Persona que lucha por ganar dinero. 
+Tonto para hacer ciertas cosas. Miedoso.
 Estar enamorado.
 Para designar un carro viejo.
 Mujer de varios hombres.
@@ -208,7 +207,6 @@ Acción que denota mal gusto.
 La familia.
 Pequeña tienda de abarrotes.
 Persona abusiva, mal portada, grosera, mentirosa.
-Montón, mucho.
 Desdecir. 
 Presumido 
 Ladrón 
@@ -216,7 +214,7 @@ Linea de cocaína.
 Loco
 Reprobar una materia o rebasar un carro en la carretera.
 Acción de un hombre y una mujer bien bien juntos.
-Hombre bien parecido, guapo, extremadamente apuesto, deseable para las mujeres.
+Hombre bien parecido, guapo, deseable para las mujeres.
 Mujer sexy, atractiva, muy guapa, de muy buen cuerpo. 
 Peleón, busca pleitos o ladrón.
 Viejo.
@@ -226,7 +224,7 @@ Los pantalones, caballo.
 Dormir. 
 Sin suerte.
 vas	Bruto(a).
-Mirar indiscretamente a una persona del sexo opuesto en una posición embarazosa.
+Mirar a una persona del sexo opuesto en una posición embarazosa.
 Cocinar con agua y sal.
 Regañar.
 Persona con capacidad intelectual inferior.
@@ -263,11 +261,12 @@ Divertido, jolgorio, bueno.
 Asunto, cosa.
 Excusas, pretextos. 
 Hombre que su mujer le es infiel, cerote.
-Que estudia mucho o es muy responsable en cuanto a sus estudios.
+Que estudia mucho o es responsable en cuanto a sus estudios.
 Golpear, pelear.
 Perder, cansado, duro, difícil.
 Chisme 
 Cambio (de dinero) en una compra.
+Algo feo, malo.
 Agua.
 Bañarse.
 Café.

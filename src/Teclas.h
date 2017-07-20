@@ -26,6 +26,7 @@ class Teclas : public QObject
 
    public:
     Teclas(Diccionario* diccionario); //Constructor
+    ~Teclas(); //Destructor
     void agregarTeclado(); //Agregar los id en el vector del teclado
     void cargarTeclado(QSvgRenderer* svgRenderer, QGraphicsScene *escena); //Carga el teclado a la escena
 

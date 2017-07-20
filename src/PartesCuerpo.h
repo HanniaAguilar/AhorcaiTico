@@ -38,7 +38,7 @@ class PartesCuerpo : public QObject
     public slots:
      void revisarEvento(bool encontrado); //Revisar si el evento es false (error:colocar parte) o true (false:ignorar)
      void quitarCuerpo(); //Quitar todo el cuerpo de la escena (opacidad 0)
-     void quitarVidas();
+     void quitarVidas(); //Quitar vidas (colocar partes del cuerpo) si se pide una pista
 };
 
 #endif // PARTESCUERPO_H

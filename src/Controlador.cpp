@@ -23,7 +23,7 @@ int Controlador::correr()
 
     diccionario->seleccionarPalabrasAzar();//Elegir la palabra para iniciar al juego
 
-    return exec();
+    return exec(); //Ciclo
 }
 
 Controlador::~Controlador() //Elimina la escena y la vista

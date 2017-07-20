@@ -21,7 +21,7 @@ class Raya  : public QObject
     QGraphicsScene* m_escena; //Guarda la escena
     QVector<ObjetoProp*> v_rayas; //Vector con las rayas
     QVector<QGraphicsSimpleTextItem*>v_letras; //Vector con las letras de la palabra a adivinar
-    Diccionario* m_diccionario;
+    Diccionario* m_diccionario; //Puntero al diccionario
 
   public:
     Raya(Diccionario* diccionario); //Constructor

@@ -27,42 +27,34 @@ void Aviso::colocarObjetos()
 
 void Aviso::quitarObjetos()
 {
-    pierde->setOpacity(0); //Ocultar
-    gane->setOpacity(0); //Ocultar
-    def->setOpacity(0);
+    pierde->setOpacity(0); //Ocultar pierde
+    gane->setOpacity(0); //Ocultar gane
+    def->setOpacity(0); //Ocultar definición
     palabraMostrada=false;
 }
 
 void Aviso::mostrarPierde()
 {
-   pierde->setOpacity(1);
-   if(!palabraMostrada)
+   pierde->setOpacity(1); //Mostrar pierde
+   if(!palabraMostrada) //Mostrar la definición si no se pidió una pista anteriormente
        this->mostrarDefinicion();
 }
 
 void Aviso::mostrarGane()
 {
-  gane->setOpacity(1);
-  if(!palabraMostrada)
+  gane->setOpacity(1); //Mostrar gane
+  if(!palabraMostrada) //Mostrar la definición si no se pidió una pista anteriormente
        this->mostrarDefinicion();
 }
 
-void Aviso::mostrarDefinicion()
+void Aviso::mostrarDefinicion() //Mostrar la definición en escena cuando se pide una pista, gana o pierde.
 {
-    def=new QGraphicsSimpleTextItem("Def: "+QString(this->m_diccionario->m_definicion));
+   //Crear el objeto con la definición en el diccionario
+    def=new QGraphicsSimpleTextItem("Def: "+QString(this->m_diccionario->getDefinicion()));
     m_escena->addItem(def); //Agregarla a la escena
-    def->setScale(2);
-    def->setPos(400,150);
-    palabraMostrada=true;
-}
-
-void Aviso::cargarDefinicion()
-{
-   /* def=new QGraphicsSimpleTextItem("Def: "+QString(this->m_diccionario->m_definicion));
-    m_escena->addItem(def); //Agregarla a la escena
-    def->setScale(2);
-    def->setOpacity(0);
-    def->setPos(400,150);*/
+    def->setScale(1.5); //Tamaño de la letra
+    def->setPos(400,150); //Colocar posición
+    palabraMostrada=true; //Ya ha sido cargada a la escena
 }
 
 Aviso:: ~Aviso() //Destructor

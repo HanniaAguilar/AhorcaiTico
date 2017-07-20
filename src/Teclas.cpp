@@ -36,9 +36,6 @@ void Teclas::agregarTeclado() //Agregar todos los ID en el svg
     v_teclado.append("letraM");
 }
 
-/*Eliminar*/
-#include <iostream>
-
 void Teclas::cargarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
 {
     ObjetoProp* temporal; // objeto temporal para cargar las teclas
@@ -68,16 +65,18 @@ void Teclas::cargarTeclado(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
             escena->addItem(temporal);//Agregar a la escena
             temporal->setPos(ejeX,ejeY);
             temporal->setOpacity(1);
-            v_objetosProp.append(temporal); //Agregar al vector
-
-            /*Eliminar este cout */
-            std::cout<<indice<<": Element loaded("<<v_teclado[indice].toStdString()<<")"<<std::endl;
+            v_objetosProp.append(temporal); //Agregar al vector            
         }
 }
 
-void Teclas::restablecerTeclado()
+void Teclas::restablecerTeclado() //Colocar todo el teclado de nuevo
 {
     for(int indice=0; indice<v_objetosProp.size();++indice){ //Volver a mostrar todo el teclado
         v_objetosProp[indice]->setOpacity(1);
     }
+}
+
+Teclas::~Teclas()
+{
+
 }

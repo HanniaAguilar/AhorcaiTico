@@ -19,14 +19,7 @@ void Raya::cargarRayas(QSvgRenderer *svgRenderer, QGraphicsScene *escena)
             temporal->setOpacity(0); //Ocultar
             m_escena->addItem(temporal); //Agregar a la escena
             v_rayas.append(temporal); //Agregar en los objetoProp
-            /*Eliminar este cout*/
-            std::cout<<indice<<": Element loaded( raya )"<<std::endl;
         }
-}
-
-Raya::~Raya()
-{
-
 }
 
 void Raya::actualizarRayas(int cantidad)
@@ -70,10 +63,15 @@ void Raya::colocarPalabra(QString palabra)
    }
 }
 
-void Raya::mostrarPalabra()
+void Raya::mostrarPalabra() //Mostrar la palabra completa, si pierde o al ganar
 {
     for(int indice=0 ; indice<v_letras.length() ; ++indice)
     {
-        v_letras[indice]->setOpacity(1);
+        v_letras[indice]->setOpacity(1); //Hacerla visible
     }
+}
+
+Raya::~Raya()
+{
+
 }

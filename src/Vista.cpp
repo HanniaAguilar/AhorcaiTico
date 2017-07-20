@@ -51,14 +51,17 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     cuerpo->agregarPartes(); //Se cargan las partes del svg
     cuerpo->colocarCuerpo(); //Se colocan en la escena con opacidad 0
 
+    //Avisos de gane o pierda
     aviso=new Aviso(m_svgRenderer, m_escena,diccionario);
     aviso->colocarObjetos();
 
+    //Pistas (Mostrar definiciones)
     pista=new Pista(m_svgRenderer, m_escena,diccionario);
-    pista->cargar();
-    pista->mostrarPista();
+    pista->cargar(); //Obtener el icono
+    pista->mostrarPista(); //Mostrar icono
 
-    // se conectan eventos de ambas clases
+    //Se conectan eventos
+
     //Revisar si la palabra presionada es correcta
     QObject::connect(diccionario,SIGNAL(clickLetra(bool)),cuerpo,SLOT(revisarEvento(bool)));
     //Verificar si ha encontrado todas las letras de la palabra
@@ -69,31 +72,36 @@ void Vista::insertarComponentes(QGraphicsScene* m_escena,Diccionario* diccionari
     QObject::connect(diccionario,SIGNAL(escribePalabra(QString)),rayas,SLOT(colocarPalabra(QString)));
     //Indicar el gane
     QObject::connect(diccionario,SIGNAL(palabraEcontrada()),m_marcador,SLOT(incrementePuntos()));
+    //Mostrar el icono de gano
     QObject::connect(diccionario,SIGNAL(palabraEcontrada()),aviso,SLOT(mostrarGane()));
-    QObject::connect(diccionario,SIGNAL(palabraEcontrada()),cuerpo,SLOT(quitarCuerpo()));
-
     //Si gana, reinicia de nuevo si lo desea
     QObject::connect(diccionario,SIGNAL(reiniciarJuego()),cuerpo,SLOT(quitarCuerpo()));
+    //Colocar todas las teclas de nuevo
     QObject::connect(diccionario,SIGNAL(reiniciarJuego()),teclas,SLOT(restablecerTeclado()));
+    //Quitar pista y objetos de gane o pierda
     QObject::connect(diccionario,SIGNAL(reiniciarJuego()),aviso,SLOT(quitarObjetos()));
-    //QObject::connect(diccionario,SIGNAL(reiniciarJuego()),aviso,SLOT(cargarDefinicion()));
+    //Colocar nueva cantidad de rayas
     QObject::connect(diccionario,SIGNAL(dibujeRayas(int)),rayas,SLOT(actualizarRayas(int)));
-
     //Si pierde, reinicia de nuevo si lo desea
     QObject::connect(cuerpo,SIGNAL(perdio()),diccionario,SLOT(bloquearTeclado()));
+    //Mostar la palabra que se debía descubrir
     QObject::connect(cuerpo,SIGNAL(perdio()),rayas,SLOT(mostrarPalabra()));
+    //Mostrar icono de pierde
     QObject::connect(cuerpo,SIGNAL(perdio()),aviso,SLOT(mostrarPierde()));
-    QObject::connect(cuerpo,SIGNAL(perdio()),teclas,SLOT(restablecerTeclado()));
-
-    //conexiones para mostrar la pista
-    //QObject::connect(diccionario,SIGNAL(clickLetra(bool)),pista,SLOT(aumenteContError(bool)));
+    //Colocar todas lasteclas de nuevo
+    QObject::connect(cuerpo,SIGNAL(perdio()),teclas,SLOT(restablecerTeclado()));    
+    //Esconder el icono de la pista si pierde
     QObject::connect(cuerpo,SIGNAL(perdio()),pista,SLOT(ocultarPista()));
+    //Esconder el icono de la pista si gana
     QObject::connect(diccionario,SIGNAL(palabraEcontrada()),pista,SLOT(ocultarPista()));
+    //Mostra la definición cuando gana
     QObject::connect(diccionario,SIGNAL(reiniciarJuego()),pista,SLOT(mostrarPista()));
+    //Colocar partes en el cuerpo si pide ayuda
     QObject::connect(diccionario,SIGNAL(quiteVidas()),cuerpo,SLOT(quitarVidas()));
+    //Mostrar la ayuda (pista) solicitada, en una ventana
     QObject::connect(diccionario,SIGNAL(mostrarAyuda(QString)),pista,SLOT(mostrarAyuda(QString)));
+    //Mostrar la definición en la escena cuando pide ayuda
     QObject::connect(diccionario,SIGNAL(mostrarAyuda(QString)),aviso,SLOT(mostrarDefinicion()));
-
     //conexion de la instruccion
     QObject::connect(diccionario,SIGNAL(muestreInstrucciones()),pista,SLOT(mostrarInstrucciones()));
 }
@@ -108,4 +116,5 @@ void Vista::dibujeFondo (QGraphicsScene* m_escena){
 
 Vista::~Vista()
 {
+
 }

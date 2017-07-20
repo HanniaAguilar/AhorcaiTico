@@ -4,8 +4,8 @@ Diccionario::Diccionario() //Inicializar los miembros
     :m_caracteresEncontrados(0)
     ,m_palabra("")
     ,m_palabraSinAcento("")    
-    ,reaccione(true)
     ,m_definicion("")
+    ,reaccione(true)
 {
 }
 
@@ -19,27 +19,23 @@ bool Diccionario::cargarPalabras()
     while(!in.atEnd()) //Leer el diccionario completo
     {
         QString linea = in.readLine(); //Leer las líneas
-        v_palabras.append(linea); //Agregar la primer palabra al vecto de palabras
+        v_palabras.append(linea); //Agregar la primer palabra al vector de palabras
     }
 
     diccionario.close(); //Cerrar el archivo
 
-    QFile pistas (":/Resources/Pistas.txt"); //Agregar el archivo del diccionario
+    QFile pistas (":/Resources/Pistas.txt"); //Agregar el archivo de las definicioens
     if(!pistas.open(QIODevice::ReadOnly))
         QMessageBox::information(0, "error", pistas.errorString()); //Reportar error si no se encuentra
 
     QTextStream inP(&pistas);
-    while(!inP.atEnd()) //Leer el diccionario completo
+    while(!inP.atEnd()) //Leer las definiciones completas
     {
         QString linea = inP.readLine(); //Leer las líneas
-        v_definiciones.append(linea); //Agregar la primer palabra al vecto de palabras
+        v_definiciones.append(linea); //Agregar la primer definición al vector
     }
 
     pistas.close(); //Cerrar el archivo
-
-    std::cout<<v_palabras.size()<<std::endl;
-
-    std::cout<<v_definiciones.size()<<std::endl;
 
     QFile diccionarioSinAcento (":/Resources/Diccionario_sin_acentos.txt");
     if(!diccionarioSinAcento.open(QIODevice::ReadOnly))
@@ -57,8 +53,6 @@ bool Diccionario::cargarPalabras()
      return true;
 }
 
-#include <iostream> /*Eliminar*/
-
 void Diccionario::seleccionarPalabrasAzar()
 {
     srand(time(NULL)); //Cambiar la semilla de números random
@@ -66,11 +60,8 @@ void Diccionario::seleccionarPalabrasAzar()
     m_palabra = v_palabras[indiceAzar]; //Leer la palabra en el número generado
     m_definicion=v_definiciones[indiceAzar];
     m_palabraSinAcento = v_palabrasSinAcento[indiceAzar]; //Leer la palabra sin acentos en el número generado
-    /*Eliminar este cout*/
-    std::cout<<m_palabra.toStdString()<<std::endl;
-    std::cout<<m_definicion.toStdString()<<std::endl;
     emit escribePalabra(m_palabraSinAcento);//Indicar que se debe escribir una palabra nueva
-    emit dibujeRayas(m_palabra.length()); //Dibujar las rayas correspondientes en la escena
+    emit dibujeRayas(m_palabraSinAcento.length()); //Dibujar las rayas correspondientes en la escena
     m_caracteresEncontrados=0;
 }
 
@@ -80,9 +71,7 @@ bool Diccionario::buscarCaracter(QChar caracter)
     for(int index=0;index<m_palabraSinAcento.length();++index){ //Recorrer la palabra en busca de ese caracter
         if(caracter.toUpper()==m_palabraSinAcento[index].toUpper()){
             //Ignore las mayúsculas y minúsculas y verificar si es igual al que se busca
-            /*Eliminar este cout*/
             caracterEncontrado=true; //Sí acertó el caracter
-            std::cout<<"mostrar caracter:"<<index<<std::endl;
             ++m_caracteresEncontrados; //Aumentar los caracteres encontrados
             emit escribaLetra(index); //Señal para indicar acierto y mostra la letra en la posición correspondiente
             emit nuevoCaracterEncontrado(); //Señal para verificar si la palabra está completa ahora
@@ -93,24 +82,35 @@ bool Diccionario::buscarCaracter(QChar caracter)
 }
 
 void Diccionario::verificarGane()
-{
-    /*Eliminar este cout*/
-    std::cout<<m_caracteresEncontrados<<" gano"<<std::endl;
+{    
     if(m_caracteresEncontrados==m_palabraSinAcento.length()){//Si se encontraron todas las letras, ya ganó
-        emit palabraEcontrada(); //Indicar que se ha ganado
-        /*Eliminar este cout*/
-        std::cout<<"gano"<<std::endl;
+        emit palabraEcontrada(); //Indicar que se ha ganado        
         m_caracteresEncontrados=0; //Iniciar la otra palabra
         reaccione=false;
     }
 }
 
- void Diccionario::bloquearTeclado(){
+void Diccionario::bloquearTeclado() //No puede reaccionar a las teclas
+{
      reaccione=false;
- }
+}
 
+bool Diccionario::getReaccionar()const //Obtener booleana reaccione
+{
+    return reaccione;
+}
 
- QString Diccionario::getDefinicion() const
- {
-     return m_definicion;
- }
+void Diccionario::setReaccionar(bool valor) //Asignar booleana reaccione
+{
+    reaccione=valor;
+}
+
+QString Diccionario::getDefinicion()const //Obtener definición de la palabra
+{
+ return m_definicion;
+}
+
+Diccionario::~Diccionario()
+{
+
+}

@@ -20,9 +20,9 @@ class Aviso : public QObject
     QGraphicsScene* m_escena; //Guardar la escena en que se muestran
     ObjetoProp* gane; //Objeto prop para crear el gane
     ObjetoProp* pierde; //Objeto prop para crear el pierde
-    Diccionario* m_diccionario;
-    QGraphicsSimpleTextItem* def;
-    bool palabraMostrada;
+    Diccionario* m_diccionario; //Diccionario
+    QGraphicsSimpleTextItem* def; //Definición del palabra actual
+    bool palabraMostrada; //La palabra ya fue mostrada
 
    public:
      Aviso(QSvgRenderer* svgRenderer, QGraphicsScene *escena, Diccionario* diccionario);  //Constructor que indica el svg y la escena
@@ -35,8 +35,7 @@ class Aviso : public QObject
      void quitarObjetos(); //Colocar los objetos en opacidad 0
      void mostrarPierde(); //Mostrar objeto de pierde
      void mostrarGane(); //Mostrar objeto de gane
-     void mostrarDefinicion();
-     void cargarDefinicion();
+     void mostrarDefinicion(); //Colocar la definición en escena
 };
 
 #endif // AVISO_H

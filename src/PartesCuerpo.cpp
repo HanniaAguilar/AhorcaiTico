@@ -89,16 +89,14 @@ void PartesCuerpo::darPos(int cont){
     }
 }
 
+void PartesCuerpo::quitarVidas() //Quitar dos vidas
+{    
+    mostrarPartes(); //Colocar una parte del cuerpo
+    mostrarPartes(); //Colocar otra parte del cuerpo
+}
+
 PartesCuerpo::~PartesCuerpo()
 {
 
-}
-
-void PartesCuerpo::quitarVidas()
-{
-    std::cout<<m_ContError<<std::endl;
-    mostrarPartes();
-    mostrarPartes();
-    std::cout<<m_ContError<<std::endl;
 }
 

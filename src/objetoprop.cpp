@@ -9,36 +9,30 @@ ObjetoProp::ObjetoProp(QString m_nombre,Diccionario* dic)
 #include <iostream>
 void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
 {
-   /*Eliminar este cout*/
-   std::cout<<"TOUCHED("<<this->elementId().toStdString()<<")"<<std::endl;
-
+    this->evento=evento;
    //Reacción de las teclas al tocarlas
     if(this->elementId()!="fondo"&&this->elementId()!="cabeza"&&this->elementId()!="torso"
             &&this->elementId()!="brazoDer"&&this->elementId()!="BrazoIzq"&&this->elementId()!="pieIzq"
             &&this->elementId()!="pieDer"&&this->elementId()!="murio"&&this->elementId()!="gano"
-            &&this->elementId()!="renglon"&&this->elementId()!="pista"&&this->diccionario->reaccione==true)
+            &&this->elementId()!="renglon"&&this->elementId()!="pista"&&(this->diccionario->getReaccionar())==true)
     {
         this->setOpacity(0.0); //Desaparecen
         this->diccionario->buscarCaracter(this->getChar()); //Se busca esa letra en la palabra a adivinar
     }
 
-    if(this->elementId()=="murio"){
-        this->setOpacity(0.0); //Cuando toca el de perder se inicia con una nueva palabra
-        this->diccionario->seleccionarPalabrasAzar();
-        this->diccionario->reaccione=true;
-        emit this->diccionario->reiniciarJuego();
+    if(this->elementId()=="murio"){        
+        this->diccionario->seleccionarPalabrasAzar(); //Una nueva palabra
+        this->diccionario->setReaccionar(true); //Bloquear el teclado
+        emit this->diccionario->reiniciarJuego(); //Iniciar otra palabra
     }
-    if(this->elementId()=="gano"){
-        //this->setOpacity(0.0); //Cuando toca el de ganar se inicia con una nueva palabra
-        this->diccionario->seleccionarPalabrasAzar();
-        this->diccionario->reaccione=true;
-        emit this->diccionario->reiniciarJuego();
+    if(this->elementId()=="gano"){        
+        this->diccionario->seleccionarPalabrasAzar(); //Una nueva palabra
+        this->diccionario->setReaccionar(true); //Bloquear el teclado
+        emit this->diccionario->reiniciarJuego(); //Iniciar otra palabra
     }
     if(this->elementId()=="pista"){
-        //this->setOpacity(0.0); //Cuando toca el de ganar se inicia con una nueva palabra
-        emit this->diccionario->quiteVidas();
-        emit this->diccionario->mostrarAyuda(diccionario->getDefinicion());
-        /*Aun no funciona arreglar*/
+        emit this->diccionario->mostrarAyuda(diccionario->getDefinicion()); //Mostrar ayuda
+        emit this->diccionario->quiteVidas(); //Quitar dos vidas (Colocar dos partes del cuerpo)
     }
 }
 

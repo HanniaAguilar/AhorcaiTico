@@ -2,6 +2,7 @@
 #define OBJETOPROP_H
 
 #include <QGraphicsSvgItem>
+#include <QGraphicsSceneMouseEvent>
 
 #include "Controlador.h"
 #include "Diccionario.h"
@@ -11,6 +12,7 @@ class ObjetoProp: public QGraphicsSvgItem
     private:     
      QChar m_caracter; //Char asignados a cada letra     
      Diccionario* diccionario; //Diccionario del juego
+     QGraphicsSceneMouseEvent* evento;
 
     public:
         ObjetoProp(QString m_nombre, Diccionario* dic=Q_NULLPTR); //Constructor
