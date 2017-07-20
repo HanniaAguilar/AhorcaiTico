@@ -16,7 +16,8 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
     if(this->elementId()!="fondo"&&this->elementId()!="cabeza"&&this->elementId()!="torso"
             &&this->elementId()!="brazoDer"&&this->elementId()!="BrazoIzq"&&this->elementId()!="pieIzq"
             &&this->elementId()!="pieDer"&&this->elementId()!="murio"&&this->elementId()!="gano"
-            &&this->elementId()!="renglon"&&this->elementId()!="pista"&&this->diccionario->reaccione==true)
+            &&this->elementId()!="renglon"&&this->elementId()!="pista"&&this->elementId()!="regla"
+            &&this->diccionario->reaccione==true)
     {
         this->setOpacity(0.0); //Desaparecen
         this->diccionario->buscarCaracter(this->getChar()); //Se busca esa letra en la palabra a adivinar
@@ -38,6 +39,11 @@ void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
         //this->setOpacity(0.0); //Cuando toca el de ganar se inicia con una nueva palabra
         emit this->diccionario->quiteVidas();
         emit this->diccionario->mostrarAyuda(diccionario->getDefinicion());
+        /*Aun no funciona arreglar*/
+    }
+    if(this->elementId()=="regla"){
+        //this->setOpacity(0.0); //Cuando toca el de ganar se inicia con una nueva palabra
+        emit this->diccionario->muestreInstrucciones();
         /*Aun no funciona arreglar*/
     }
 }
