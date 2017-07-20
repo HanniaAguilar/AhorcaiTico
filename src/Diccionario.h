@@ -43,6 +43,7 @@ class Diccionario : public QObject
     void reiniciarJuego();
     void quiteVidas();
     void mostrarAyuda(QString pista);
+    void muestreInstrucciones();
 
   public slots:
     void bloquearTeclado();

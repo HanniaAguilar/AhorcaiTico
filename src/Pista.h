@@ -34,6 +34,7 @@ class Pista : public QObject
     void ocultarPista();//oculta la pista
     void mostrarPista();
     void mostrarAyuda(QString pista);
+    void mostrarInstrucciones();
 };
 
 #endif // PISTA_H
