@@ -9,7 +9,10 @@ ObjetoProp::ObjetoProp(QString m_nombre,Diccionario* dic)
 #include <iostream>
 void ObjetoProp::mousePressEvent(QGraphicsSceneMouseEvent *evento)
 {
-    this->evento=evento;
+    // para evitar el warning de no usado por el compilador
+    (void)evento;
+    Q_UNUSED(evento);
+
    //Reacción de las teclas al tocarlas
     if(this->elementId()!="fondo"&&this->elementId()!="cabeza"&&this->elementId()!="torso"
             &&this->elementId()!="brazoDer"&&this->elementId()!="BrazoIzq"&&this->elementId()!="pieIzq"
