@@ -77,7 +77,7 @@ sobre los principales costarriqueñismos jugando.
 
 **Cuando pierde el jugador se muestra lo siguiente:**
 
-![pierde](http://i.imgur.com/5lkyXEW.jpg "Pantalla preliminar cuando pierde")
+
 
 ### [Inkscape][sitio]
 Se utilizara este editor de gráficos vectoriales, permite crear y editar las imagenes, diagramas u otros necesarios para el diseño de la interfaz. El diseño de estos por medio de gráficos vectoriales hace posible ampliar el tamaño de una imagen sin sufrir la pérdida de calidad como sucede en las imagenes convecionales, además permite manipular las imagenes, mover, encojer, estirar de forma sencilla lo que facilita el diseño de las ventanas para el juego que se pretende diseñar. 
